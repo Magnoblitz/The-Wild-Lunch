@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlateState" load_steps=4 format=3 uid="uid://dan8owixsfe0n"]
+
+[ext_resource type="Texture2D" uid="uid://vr3vme380b81" path="res://art/spicy_bowl_of_beans.png" id="1_saghk"]
+[ext_resource type="Script" path="res://scripts/classes/food_transition_state.gd" id="2_p5mcn"]
+[ext_resource type="Script" path="res://scripts/classes/plate_state.gd" id="3_yw8dy"]
+
+[resource]
+script = ExtResource("3_yw8dy")
+image = ExtResource("1_saghk")
+pan_images = Array[Texture2D]([null, null, null, null])
+next_states = Array[ExtResource("2_p5mcn")]([])
+id = 4
+cooking_time = 0.0
+burning_time = 0.0
+trash_value = 3
+main_plate_action = -1

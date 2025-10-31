@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PlateState" load_steps=4 format=3 uid="uid://58kiyhyldits"]
+
+[ext_resource type="Texture2D" uid="uid://cbcl1ka84vlxp" path="res://art/normal_hotsauce.png" id="1_t35l8"]
+[ext_resource type="Script" path="res://scripts/classes/food_transition_state.gd" id="1_vvhj0"]
+[ext_resource type="Script" path="res://scripts/classes/plate_state.gd" id="2_ksn07"]
+
+[resource]
+script = ExtResource("2_ksn07")
+image = ExtResource("1_t35l8")
+next_states = Array[ExtResource("1_vvhj0")]([])
+id = -1
+cooking_time = 0.0
+burning_time = 0.0
+trash_value = 0
+main_plate_action = 7

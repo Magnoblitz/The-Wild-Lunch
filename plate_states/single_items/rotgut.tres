@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlateState" load_steps=5 format=3 uid="uid://bg8w8lbmrwb5o"]
+
+[ext_resource type="Texture2D" uid="uid://c4s3x8yhlsmhm" path="res://art/rot_gut.png" id="1_a48fm"]
+[ext_resource type="Script" path="res://scripts/classes/food_transition_state.gd" id="1_mhhsd"]
+[ext_resource type="Texture2D" uid="uid://b11e3n1seifyl" path="res://art/rot_gut_in_ice.png" id="3_1xdyp"]
+[ext_resource type="Script" path="res://scripts/classes/plate_state.gd" id="4_70wde"]
+
+[resource]
+script = ExtResource("4_70wde")
+image = ExtResource("1_a48fm")
+plated_image = ExtResource("3_1xdyp")
+next_states = Array[ExtResource("1_mhhsd")]([])
+id = 2
+cooking_time = 0.0
+burning_time = 0.0
+trash_value = 0

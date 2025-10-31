@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PlateState" load_steps=9 format=3 uid="uid://i3fk85xlc6xm"]
+
+[ext_resource type="Script" path="res://scripts/classes/food_transition_state.gd" id="1_3a55w"]
+[ext_resource type="Texture2D" uid="uid://ieu2gey6hbfl" path="res://art/uncooked_jerky.png" id="1_kttnk"]
+[ext_resource type="Script" path="res://scripts/classes/plate_state.gd" id="2_8i1bg"]
+[ext_resource type="Resource" uid="uid://3k8t1liybwl8" path="res://plate_states/pan/jerky.tres" id="3_4mk2l"]
+[ext_resource type="Texture2D" uid="uid://cw0c5kf414v14" path="res://art/btm_left_pan_uncooked_jerky.png" id="4_28s6e"]
+[ext_resource type="Texture2D" uid="uid://bimbmfnpc5njf" path="res://art/top_left_pan_uncooked_jerky.png" id="5_8ibl6"]
+[ext_resource type="Texture2D" uid="uid://dgidg0g1ibtmh" path="res://art/top_right_pan_uncooked_jerky.png" id="6_u16r3"]
+
+[sub_resource type="Resource" id="Resource_jw8ym"]
+script = ExtResource("1_3a55w")
+action = 5
+next_state = ExtResource("3_4mk2l")
+
+[resource]
+script = ExtResource("2_8i1bg")
+image = ExtResource("1_kttnk")
+pan_images = Array[Texture2D]([ExtResource("4_28s6e"), ExtResource("5_8ibl6"), ExtResource("6_u16r3"), ExtResource("4_28s6e")])
+next_states = Array[ExtResource("1_3a55w")]([SubResource("Resource_jw8ym")])
+id = -2
+cooking_time = 5.0
+burning_time = 0.0
+trash_value = 0
+main_plate_action = -1

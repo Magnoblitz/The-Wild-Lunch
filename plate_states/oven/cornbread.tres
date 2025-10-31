@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlateState" load_steps=6 format=3 uid="uid://cn85r2gcyc1r7"]
+
+[ext_resource type="Texture2D" uid="uid://c58p41s0lc2gw" path="res://art/cornbread.png" id="1_8itok"]
+[ext_resource type="Script" path="res://scripts/classes/food_transition_state.gd" id="2_kp66d"]
+[ext_resource type="Resource" uid="uid://bxb7ktuiwv77c" path="res://plate_states/oven/burnt_cornbread.tres" id="3_3pkww"]
+[ext_resource type="Script" path="res://scripts/classes/plate_state.gd" id="4_ujbdv"]
+
+[sub_resource type="Resource" id="Resource_uevnf"]
+script = ExtResource("2_kp66d")
+action = 4
+next_state = ExtResource("3_3pkww")
+
+[resource]
+script = ExtResource("4_ujbdv")
+image = ExtResource("1_8itok")
+pan_images = Array[Texture2D]([null, null, null, null])
+next_states = Array[ExtResource("2_kp66d")]([SubResource("Resource_uevnf")])
+id = 1
+cooking_time = 0.0
+burning_time = 8.0
+trash_value = 2
+main_plate_action = -1

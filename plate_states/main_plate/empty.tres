@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PlateState" load_steps=8 format=3 uid="uid://vc6456xkrnms"]
+
+[ext_resource type="Script" path="res://scripts/classes/food_transition_state.gd" id="1_ejgom"]
+[ext_resource type="Script" path="res://scripts/classes/plate_state.gd" id="1_ltrnq"]
+[ext_resource type="Resource" uid="uid://epafql5wre3v" path="res://plate_states/main_plate/bowl.tres" id="2_53tcl"]
+[ext_resource type="Texture2D" uid="uid://vrooqxy126cv" path="res://art/btm_left_pan.png" id="4_2gykt"]
+[ext_resource type="Texture2D" uid="uid://dtuk1hasqao06" path="res://art/top_left_pan_.png" id="4_s3dcd"]
+[ext_resource type="Texture2D" uid="uid://cc4c3bepw0if1" path="res://art/top_right_pan.png" id="5_hgi52"]
+
+[sub_resource type="Resource" id="Resource_s3lq3"]
+script = ExtResource("1_ejgom")
+action = 0
+next_state = ExtResource("2_53tcl")
+
+[resource]
+script = ExtResource("1_ltrnq")
+pan_images = Array[Texture2D]([ExtResource("4_2gykt"), ExtResource("4_s3dcd"), ExtResource("5_hgi52"), ExtResource("4_2gykt")])
+next_states = Array[ExtResource("1_ejgom")]([SubResource("Resource_s3lq3")])
+id = -1
+cooking_time = 0.0
+burning_time = 0.0
+trash_value = 0
+main_plate_action = -1

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="PlateState" load_steps=7 format=3 uid="uid://epafql5wre3v"]
+
+[ext_resource type="Texture2D" uid="uid://bh7yjmxhpnk3r" path="res://art/bowl.png" id="1_87fu4"]
+[ext_resource type="Script" path="res://scripts/classes/plate_state.gd" id="1_je5gn"]
+[ext_resource type="Script" path="res://scripts/classes/food_transition_state.gd" id="1_r5x6f"]
+[ext_resource type="Resource" uid="uid://cx77jd0ycvjom" path="res://plate_states/main_plate/bowl_of_beans.tres" id="3_qaule"]
+[ext_resource type="Texture2D" uid="uid://biiynausbtoxx" path="res://art/stack_of_bowls.png" id="4_k2day"]
+
+[sub_resource type="Resource" id="Resource_ry4py"]
+script = ExtResource("1_r5x6f")
+action = 1
+next_state = ExtResource("3_qaule")
+
+[resource]
+script = ExtResource("1_je5gn")
+image = ExtResource("1_87fu4")
+plated_image = ExtResource("4_k2day")
+pan_images = Array[Texture2D]([null, null, null, null])
+next_states = Array[ExtResource("1_r5x6f")]([SubResource("Resource_ry4py")])
+id = -1
+cooking_time = 0.0
+burning_time = 0.0
+trash_value = 0
+main_plate_action = 0
