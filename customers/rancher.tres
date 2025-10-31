@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerInfo" load_steps=5 format=3 uid="uid://dvndo567c3txk"]
+
+[ext_resource type="Texture2D" uid="uid://dm2xi4i1kika8" path="res://art/customer_old_man_angry.png" id="1_6om1t"]
+[ext_resource type="Texture2D" uid="uid://bis2dtbw8g266" path="res://art/customer_old_man_happy.png" id="2_5bcsx"]
+[ext_resource type="Script" path="res://scripts/classes/customer_info.gd" id="2_iec64"]
+[ext_resource type="Texture2D" uid="uid://bdumknl3fe54a" path="res://art/customer_old_man_unhappy.png" id="4_c3fqt"]
+
+[resource]
+script = ExtResource("2_iec64")
+name = "Peter Betting"
+role = "Rancher"
+male = true
+customer_type = 0
+happy_image = ExtResource("2_5bcsx")
+unhappy_image = ExtResource("4_c3fqt")
+angry_image = ExtResource("1_6om1t")

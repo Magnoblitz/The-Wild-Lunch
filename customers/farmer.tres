@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerInfo" load_steps=5 format=3 uid="uid://cyews8cxrbl1j"]
+
+[ext_resource type="Texture2D" uid="uid://x1x34stjo1jv" path="res://art/customer_farmer_angry.png" id="1_5l6rs"]
+[ext_resource type="Script" path="res://scripts/classes/customer_info.gd" id="1_ib43w"]
+[ext_resource type="Texture2D" uid="uid://csqw4bp67dn74" path="res://art/customer_farmer_happy.png" id="2_uwcwp"]
+[ext_resource type="Texture2D" uid="uid://dnlsnerblmmhb" path="res://art/customer_farmer_unhappy.png" id="4_eqxjk"]
+
+[resource]
+script = ExtResource("1_ib43w")
+name = "Hayseed Hank"
+role = "Farmer"
+male = true
+customer_type = 0
+happy_image = ExtResource("2_uwcwp")
+unhappy_image = ExtResource("4_eqxjk")
+angry_image = ExtResource("1_5l6rs")

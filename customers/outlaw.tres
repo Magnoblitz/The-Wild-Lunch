@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CustomerInfo" load_steps=3 format=3 uid="uid://bv024w3fbqrje"]
+
+[ext_resource type="Texture2D" uid="uid://irnh6ed2gdlr" path="res://art/outlaw.png" id="1_w7cn1"]
+[ext_resource type="Script" path="res://scripts/classes/customer_info.gd" id="3_ywvnu"]
+
+[resource]
+script = ExtResource("3_ywvnu")
+name = "Bully Bill"
+role = "Outlaw"
+customer_type = 1
+normal_image = ExtResource("1_w7cn1")
+upset_image = ExtResource("1_w7cn1")
+angry_image = ExtResource("1_w7cn1")

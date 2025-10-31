@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerInfo" load_steps=5 format=3 uid="uid://bcvajekf2x3ig"]
+
+[ext_resource type="Texture2D" uid="uid://c5rutjefjgkge" path="res://art/customer_farmer_daughter_angry.png" id="1_2f1ec"]
+[ext_resource type="Script" path="res://scripts/classes/customer_info.gd" id="1_5j134"]
+[ext_resource type="Texture2D" uid="uid://dwj6ku00y1xde" path="res://art/customer_farmer_daughter_happy.png" id="2_tvkd8"]
+[ext_resource type="Texture2D" uid="uid://c4he83a50fbrn" path="res://art/customer_farmer_daughter_unhappy.png" id="4_3ligj"]
+
+[resource]
+script = ExtResource("1_5j134")
+name = "Annie Oatley"
+role = "Farmer's Daughter"
+male = false
+customer_type = 0
+happy_image = ExtResource("2_tvkd8")
+unhappy_image = ExtResource("4_3ligj")
+angry_image = ExtResource("1_2f1ec")
