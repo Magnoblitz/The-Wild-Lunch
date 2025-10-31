@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://bfj05lk1i4q8p"]
+
+[ext_resource type="AudioStream" uid="uid://c8yjxld3p658a" path="res://audio/honk.mp3" id="1_6efj0"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_nkrb4"]
+
+[resource]
+script = ExtResource("2_nkrb4")
+sound_name = "honk"
+audio_file = ExtResource("1_6efj0")
+type = 1

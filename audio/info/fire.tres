@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://fqa748m26d4m"]
+
+[ext_resource type="AudioStream" uid="uid://bbvtg07n3ixkr" path="res://audio/fire.mp3" id="1_2340g"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_hwp3t"]
+
+[resource]
+script = ExtResource("2_hwp3t")
+sound_name = "fire"
+audio_file = ExtResource("1_2340g")
+type = 1

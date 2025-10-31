@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://qkbhci52i5qh"]
+
+[ext_resource type="AudioStream" uid="uid://bfotyvf3e8546" path="res://audio/Whiskey-Hills-by-Rest--Settle--Soundstripe.mp3" id="1_m7f1j"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_w72xr"]
+
+[resource]
+script = ExtResource("2_w72xr")
+sound_name = "music 4"
+audio_file = ExtResource("1_m7f1j")
+type = 0
+song_name = "Whiskey Hills"
+artist_name = "Rest & Settle"

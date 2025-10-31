@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://bcynlqyn7dl2i"]
+
+[ext_resource type="AudioStream" uid="uid://c6rjaidsxxq4w" path="res://audio/trash_can_trash_item.mp3" id="1_mgnxw"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_ipk3e"]
+
+[resource]
+script = ExtResource("2_ipk3e")
+sound_name = "trash item"
+audio_file = ExtResource("1_mgnxw")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

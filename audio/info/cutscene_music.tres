@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://b6bdajg12vqn6"]
+
+[ext_resource type="AudioStream" uid="uid://cx3cebo6i2oqk" path="res://audio/Horseshoe-Bend-by-Heartland-Nights--Soundstripe.mp3" id="1_iq6uc"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_ucrl7"]
+
+[resource]
+script = ExtResource("2_ucrl7")
+sound_name = "cutscene music"
+audio_file = ExtResource("1_iq6uc")
+type = 0
+song_name = "Song Name"
+artist_name = "Artist Name"

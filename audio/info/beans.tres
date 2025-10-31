@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://dlu3mcovov7jg"]
+
+[ext_resource type="AudioStream" uid="uid://dl8v11ox4wlmc" path="res://audio/beans.mp3" id="1_6w8yo"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_74str"]
+
+[resource]
+script = ExtResource("2_74str")
+sound_name = "beans"
+audio_file = ExtResource("1_6w8yo")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

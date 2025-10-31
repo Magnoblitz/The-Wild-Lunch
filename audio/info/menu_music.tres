@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://bapexpvq8xuul"]
+
+[ext_resource type="AudioStream" uid="uid://0euaa4xdpx0i" path="res://audio/Return-To-Lon-Lon-Ranch-by-Cast-Of-Characters--Soundstripe.mp3" id="1_gsl71"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_njyh2"]
+
+[resource]
+script = ExtResource("2_njyh2")
+sound_name = "menu music"
+audio_file = ExtResource("1_gsl71")
+type = 0

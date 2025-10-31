@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://nkrx1g2y0ne8"]
+
+[ext_resource type="AudioStream" uid="uid://d2kaq08ux385g" path="res://audio/man_order.mp3" id="1_njwiu"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_tbfo3"]
+
+[resource]
+script = ExtResource("2_tbfo3")
+sound_name = "man order"
+audio_file = ExtResource("1_njwiu")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

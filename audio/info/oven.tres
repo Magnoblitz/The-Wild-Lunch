@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://bsuiou0qtfk4i"]
+
+[ext_resource type="AudioStream" uid="uid://buff0m58vv04o" path="res://audio/oven.mp3" id="1_45f0r"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_cysv4"]
+
+[resource]
+script = ExtResource("2_cysv4")
+sound_name = "oven"
+audio_file = ExtResource("1_45f0r")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

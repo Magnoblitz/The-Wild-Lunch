@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://cr42b5kgihgxu"]
+
+[ext_resource type="AudioStream" uid="uid://dgxk4vcxej5op" path="res://audio/man_angry.mp3" id="1_3x8lf"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_hul2p"]
+
+[resource]
+script = ExtResource("2_hul2p")
+sound_name = "man angry"
+audio_file = ExtResource("1_3x8lf")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

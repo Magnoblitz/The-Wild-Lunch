@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://dp54kpkdc0xoj"]
+
+[ext_resource type="AudioStream" uid="uid://d3ansk6et8pph" path="res://audio/smoke.mp3" id="1_86msg"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_hd2xu"]
+
+[resource]
+script = ExtResource("2_hd2xu")
+sound_name = "smoke"
+audio_file = ExtResource("1_86msg")
+type = 1

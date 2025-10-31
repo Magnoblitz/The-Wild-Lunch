@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://bdw6f37qyoen1"]
+
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="1_b2c81"]
+[ext_resource type="AudioStream" uid="uid://diva0xlyrbjcl" path="res://audio/coins.mp3" id="1_qoggv"]
+
+[resource]
+script = ExtResource("1_b2c81")
+sound_name = "coins"
+audio_file = ExtResource("1_qoggv")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

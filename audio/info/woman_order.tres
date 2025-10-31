@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://5hqtyuhiqgs1"]
+
+[ext_resource type="AudioStream" uid="uid://ddkqmcpo6c7da" path="res://audio/woman_order.mp3" id="1_nagfy"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_n13io"]
+
+[resource]
+script = ExtResource("2_n13io")
+sound_name = "woman order"
+audio_file = ExtResource("1_nagfy")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

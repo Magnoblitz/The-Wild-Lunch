@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://cqoei484f1cdk"]
+
+[ext_resource type="AudioStream" uid="uid://c5teuiyl6ph3c" path="res://audio/woman_receive_food.mp3" id="1_hbj31"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_wf4wn"]
+
+[resource]
+script = ExtResource("2_wf4wn")
+sound_name = "woman receive food"
+audio_file = ExtResource("1_hbj31")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

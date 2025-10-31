@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://yadcl3sjysbq"]
+
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="1_20qbm"]
+[ext_resource type="AudioStream" uid="uid://0bbsqhjdydg3" path="res://audio/man_unhappy.mp3" id="1_gpjwe"]
+
+[resource]
+script = ExtResource("1_20qbm")
+sound_name = "man unhappy"
+audio_file = ExtResource("1_gpjwe")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

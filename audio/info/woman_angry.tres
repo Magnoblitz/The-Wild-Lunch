@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://hgab62ddq75"]
+
+[ext_resource type="AudioStream" uid="uid://c5uiw6uxwiv0u" path="res://audio/woman_angry.mp3" id="1_hfbun"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_5tksf"]
+
+[resource]
+script = ExtResource("2_5tksf")
+sound_name = "woman angry"
+audio_file = ExtResource("1_hfbun")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

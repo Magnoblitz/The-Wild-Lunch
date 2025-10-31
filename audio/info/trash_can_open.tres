@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://nwcdn31reute"]
+
+[ext_resource type="AudioStream" uid="uid://ntrb0j0eekpj" path="res://audio/trash_can_open.mp3" id="1_1h2ww"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="1_ceben"]
+
+[resource]
+script = ExtResource("1_ceben")
+sound_name = "open trash"
+audio_file = ExtResource("1_1h2ww")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

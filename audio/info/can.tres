@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://cxvyn8r8e6gps"]
+
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="1_cnj64"]
+[ext_resource type="AudioStream" uid="uid://e3bbpo8ofxbr" path="res://audio/can.mp3" id="1_npwc0"]
+
+[resource]
+script = ExtResource("1_cnj64")
+sound_name = "can"
+audio_file = ExtResource("1_npwc0")
+type = 1

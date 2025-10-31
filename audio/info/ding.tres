@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://dqagetlymlndo"]
+
+[ext_resource type="AudioStream" uid="uid://oeysfj7n5rr0" path="res://audio/ding-126626.mp3" id="1_8agcv"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_kxugb"]
+
+[resource]
+script = ExtResource("2_kxugb")
+sound_name = "ding"
+audio_file = ExtResource("1_8agcv")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

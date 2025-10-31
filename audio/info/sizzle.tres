@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://d3xj10mfeqayl"]
+
+[ext_resource type="AudioStream" uid="uid://js7nxwo8hjl0" path="res://audio/sizzle.mp3" id="1_g1ad3"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_6u55e"]
+
+[resource]
+script = ExtResource("2_6u55e")
+sound_name = "sizzle"
+audio_file = ExtResource("1_g1ad3")
+type = 1

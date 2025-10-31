@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://m06gmdjj2thm"]
+
+[ext_resource type="AudioStream" uid="uid://bcoq0s7d6xe3n" path="res://audio/GoodHearted-Man-by-Heartland-Nights--Soundstripe.mp3" id="1_0ax7a"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_06ukn"]
+
+[resource]
+script = ExtResource("2_06ukn")
+sound_name = "music 2"
+audio_file = ExtResource("1_0ax7a")
+type = 0
+song_name = "Good-Hearted Man"
+artist_name = "Heartland Nights"

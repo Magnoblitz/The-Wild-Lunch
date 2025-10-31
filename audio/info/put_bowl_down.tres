@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://boijpcnxkn0q0"]
+
+[ext_resource type="AudioStream" uid="uid://dxma0u5yqdt0b" path="res://audio/put_bowl_down.mp3" id="1_iavcf"]
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="2_5i332"]
+
+[resource]
+script = ExtResource("2_5i332")
+sound_name = "place bowl"
+audio_file = ExtResource("1_iavcf")
+type = 1
+song_name = "Song Name"
+artist_name = "Artist Name"

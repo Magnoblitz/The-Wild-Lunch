@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioInfo" load_steps=3 format=3 uid="uid://es5uqsyld0gv"]
+
+[ext_resource type="Script" path="res://scripts/classes/audio_info.gd" id="1_00vk3"]
+[ext_resource type="AudioStream" uid="uid://dfmsphprotk56" path="res://audio/Brothers-by-Heartland-Nights--Soundstripe.mp3" id="1_ayn8g"]
+
+[resource]
+script = ExtResource("1_00vk3")
+sound_name = "music 1"
+audio_file = ExtResource("1_ayn8g")
+type = 0
+song_name = "Song Name"
+artist_name = "Artist Name"
