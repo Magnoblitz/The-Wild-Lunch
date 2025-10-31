@@ -1,0 +1,437 @@
+[gd_resource type="Resource" script_class="TutorialSequence" load_steps=49 format=3 uid="uid://2i2xqsmy0kxs"]
+
+[ext_resource type="Script" path="res://scripts/classes/tutorial_cause.gd" id="1_g1bxx"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_sequence.gd" id="1_wgcpa"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_step.gd" id="2_0gy64"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_trigger.gd" id="4_730ea"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_action.gd" id="5_cmfrv"]
+[ext_resource type="Resource" uid="uid://5itl55tvmqxw" path="res://customers/baker.tres" id="6_f2qyl"]
+
+[sub_resource type="Resource" id="Resource_fg88f"]
+script = ExtResource("1_g1bxx")
+type = 2
+int1 = 3
+
+[sub_resource type="Resource" id="Resource_mxee2"]
+script = ExtResource("4_730ea")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_4eri1"]
+script = ExtResource("5_cmfrv")
+type = 1
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = "Jerky"
+
+[sub_resource type="Resource" id="Resource_6wqak"]
+script = ExtResource("5_cmfrv")
+type = 4
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_fsu2q"]
+script = ExtResource("4_730ea")
+type = 0
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_60glh"]
+script = ExtResource("5_cmfrv")
+type = 5
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_1rm0a"]
+script = ExtResource("2_0gy64")
+text = "Hey there again! You've been running your saloon pretty well. Are you ready to start cooking too?"
+right = false
+shaded_bg = true
+light_position = Vector2(-10, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_fsu2q")
+end_trigger = SubResource("Resource_mxee2")
+starting_actions = Array[ExtResource("5_cmfrv")]([SubResource("Resource_60glh")])
+ending_actions = Array[ExtResource("5_cmfrv")]([SubResource("Resource_4eri1"), SubResource("Resource_6wqak")])
+
+[sub_resource type="Resource" id="Resource_j3w3u"]
+script = ExtResource("4_730ea")
+type = 10
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -2
+
+[sub_resource type="Resource" id="Resource_llfpt"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_jigb8"]
+script = ExtResource("2_0gy64")
+text = "Drag a piece of jerky onto the pan to cook it."
+right = false
+shaded_bg = true
+light_position = Vector2(0.778, 0.466)
+light_size = 1.0
+moving_hand = true
+hand_movement_pos1 = Vector2(913, 660)
+hand_movement_pos2 = Vector2(1053, 481)
+hand_movement_speed = 2.0
+start_trigger = SubResource("Resource_llfpt")
+end_trigger = SubResource("Resource_j3w3u")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([])
+
+[sub_resource type="Resource" id="Resource_74gst"]
+script = ExtResource("4_730ea")
+type = 11
+any = false
+specification_string = ""
+specification_float = 0.0
+specification_int = 3
+
+[sub_resource type="Resource" id="Resource_t1qfb"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_0ef4h"]
+script = ExtResource("2_0gy64")
+text = "Now wait until it's finished cooking."
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_t1qfb")
+end_trigger = SubResource("Resource_74gst")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([])
+
+[sub_resource type="Resource" id="Resource_kjtmc"]
+script = ExtResource("4_730ea")
+type = 12
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = 3
+
+[sub_resource type="Resource" id="Resource_a7sft"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_f7jdv"]
+script = ExtResource("2_0gy64")
+text = "Great job! Now drag the cooked jerky to a small plate. But be quick before the jerky burns!"
+right = false
+shaded_bg = true
+light_position = Vector2(0.791, 0.38)
+light_size = 0.85
+moving_hand = true
+hand_movement_pos1 = Vector2(1053, 481)
+hand_movement_pos2 = Vector2(961, 504)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_a7sft")
+end_trigger = SubResource("Resource_kjtmc")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([])
+
+[sub_resource type="Resource" id="Resource_kbtlu"]
+script = ExtResource("4_730ea")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_wwvow"]
+script = ExtResource("5_cmfrv")
+type = 5
+int1 = 0
+order = Array[int]([])
+bool1 = true
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_b30wt"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_i0cw2"]
+script = ExtResource("2_0gy64")
+text = "Good job! If you ever see that the food is on fire, it is about to burn. Now let me show you what do when you burn food or when you need to get rid of a food item."
+right = true
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_b30wt")
+end_trigger = SubResource("Resource_kbtlu")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([SubResource("Resource_wwvow")])
+
+[sub_resource type="Resource" id="Resource_2hgsu"]
+script = ExtResource("4_730ea")
+type = 13
+any = false
+specification_string = ""
+specification_float = 0.0
+specification_int = 3
+
+[sub_resource type="Resource" id="Resource_lbu43"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_emlvu"]
+script = ExtResource("2_0gy64")
+text = "Drag the jerky into the trash can. You'll get a small penalty, so try to avoid it normally."
+right = true
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = true
+hand_movement_pos1 = Vector2(961, 504)
+hand_movement_pos2 = Vector2(74, 618)
+hand_movement_speed = 2.0
+start_trigger = SubResource("Resource_lbu43")
+end_trigger = SubResource("Resource_2hgsu")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([])
+
+[sub_resource type="Resource" id="Resource_gpaai"]
+script = ExtResource("4_730ea")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_0hfiq"]
+script = ExtResource("5_cmfrv")
+type = 1
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = "Cornbread"
+
+[sub_resource type="Resource" id="Resource_ing7u"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_50ix5"]
+script = ExtResource("2_0gy64")
+text = "Great job! Now let's bake some cornbread."
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_ing7u")
+end_trigger = SubResource("Resource_gpaai")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([SubResource("Resource_0hfiq")])
+
+[sub_resource type="Resource" id="Resource_nbfid"]
+script = ExtResource("4_730ea")
+type = 9
+any = false
+specification_string = ""
+specification_float = 0.0
+specification_int = 2
+
+[sub_resource type="Resource" id="Resource_gxf8b"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_njvp1"]
+script = ExtResource("2_0gy64")
+text = "Click the box of cornbread mix to put it in the oven."
+right = false
+shaded_bg = true
+light_position = Vector2(0.466, 0.509)
+light_size = 0.75
+moving_hand = true
+hand_movement_pos1 = Vector2(675, 608)
+hand_movement_pos2 = Vector2(675, 608)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_gxf8b")
+end_trigger = SubResource("Resource_nbfid")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([])
+
+[sub_resource type="Resource" id="Resource_l3b10"]
+script = ExtResource("4_730ea")
+type = 12
+any = false
+specification_string = ""
+specification_float = 0.0
+specification_int = 1
+
+[sub_resource type="Resource" id="Resource_a0x5x"]
+script = ExtResource("4_730ea")
+type = 11
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = 1
+
+[sub_resource type="Resource" id="Resource_r74jg"]
+script = ExtResource("2_0gy64")
+text = "Mmm, something smells good. Drag the cornbread onto a small plate before it burns."
+right = false
+shaded_bg = true
+light_position = Vector2(0.833, 0.44)
+light_size = 0.85
+moving_hand = true
+hand_movement_pos1 = Vector2(1127, 633)
+hand_movement_pos2 = Vector2(975, 521)
+hand_movement_speed = 2.0
+start_trigger = SubResource("Resource_a0x5x")
+end_trigger = SubResource("Resource_l3b10")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([])
+
+[sub_resource type="Resource" id="Resource_bp5wy"]
+script = ExtResource("4_730ea")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_i66uw"]
+script = ExtResource("5_cmfrv")
+type = 4
+int1 = 0
+order = Array[int]([])
+bool1 = true
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_im07s"]
+script = ExtResource("5_cmfrv")
+type = 0
+customer_info = ExtResource("6_f2qyl")
+int1 = 1
+order = Array[int]([1, 1, 3])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_by26y"]
+script = ExtResource("4_730ea")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_udu86"]
+script = ExtResource("2_0gy64")
+text = "Nice job! Now serve some customers to finish off the day."
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_by26y")
+end_trigger = SubResource("Resource_bp5wy")
+starting_actions = Array[ExtResource("5_cmfrv")]([])
+ending_actions = Array[ExtResource("5_cmfrv")]([SubResource("Resource_i66uw"), SubResource("Resource_im07s")])
+
+[sub_resource type="Resource" id="Resource_0k5cu"]
+script = ExtResource("4_730ea")
+type = 7
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_lnk4c"]
+script = ExtResource("4_730ea")
+type = 8
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_vxyic"]
+script = ExtResource("5_cmfrv")
+type = 2
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_b4je6"]
+script = ExtResource("2_0gy64")
+text = ""
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_lnk4c")
+end_trigger = SubResource("Resource_0k5cu")
+starting_actions = Array[ExtResource("5_cmfrv")]([SubResource("Resource_vxyic")])
+ending_actions = Array[ExtResource("5_cmfrv")]([])
+
+[resource]
+script = ExtResource("1_wgcpa")
+tut_name = "cooking"
+steps = Array[ExtResource("2_0gy64")]([SubResource("Resource_1rm0a"), SubResource("Resource_jigb8"), SubResource("Resource_0ef4h"), SubResource("Resource_f7jdv"), SubResource("Resource_i0cw2"), SubResource("Resource_emlvu"), SubResource("Resource_50ix5"), SubResource("Resource_njvp1"), SubResource("Resource_r74jg"), SubResource("Resource_udu86"), SubResource("Resource_b4je6")])
+cause = SubResource("Resource_fg88f")
+num_customers = 6

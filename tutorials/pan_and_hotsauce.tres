@@ -1,0 +1,213 @@
+[gd_resource type="Resource" script_class="TutorialSequence" load_steps=27 format=3 uid="uid://bjbq1vyl4fj56"]
+
+[ext_resource type="Script" path="res://scripts/classes/tutorial_cause.gd" id="1_mib66"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_sequence.gd" id="2_y15it"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_step.gd" id="3_77sfw"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_trigger.gd" id="4_alqgd"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_action.gd" id="5_s12gh"]
+[ext_resource type="Resource" uid="uid://dvndo567c3txk" path="res://customers/rancher.tres" id="6_ahwas"]
+
+[sub_resource type="Resource" id="Resource_fg88f"]
+script = ExtResource("1_mib66")
+type = 2
+int1 = 10
+
+[sub_resource type="Resource" id="Resource_smb0k"]
+script = ExtResource("4_alqgd")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_b0wkd"]
+script = ExtResource("4_alqgd")
+type = 0
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_qey3l"]
+script = ExtResource("5_s12gh")
+type = 1
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = "Hotsauce"
+
+[sub_resource type="Resource" id="Resource_l2h18"]
+script = ExtResource("3_77sfw")
+text = "Congratulations on making it to Day 10! I think you're ready to unlock a new recipe: Spicy Beans."
+right = false
+shaded_bg = true
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_b0wkd")
+end_trigger = SubResource("Resource_smb0k")
+starting_actions = Array[ExtResource("5_s12gh")]([SubResource("Resource_qey3l")])
+ending_actions = Array[ExtResource("5_s12gh")]([])
+
+[sub_resource type="Resource" id="Resource_ptgv8"]
+script = ExtResource("4_alqgd")
+type = 9
+any = false
+specification_string = ""
+specification_float = 0.0
+specification_int = 1
+
+[sub_resource type="Resource" id="Resource_5oibx"]
+script = ExtResource("4_alqgd")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_qrrej"]
+script = ExtResource("3_77sfw")
+text = "First make a normal bowl of beans."
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_5oibx")
+end_trigger = SubResource("Resource_ptgv8")
+starting_actions = Array[ExtResource("5_s12gh")]([])
+ending_actions = Array[ExtResource("5_s12gh")]([])
+
+[sub_resource type="Resource" id="Resource_7rydo"]
+script = ExtResource("4_alqgd")
+type = 9
+any = false
+specification_string = ""
+specification_float = 0.0
+specification_int = 7
+
+[sub_resource type="Resource" id="Resource_5ou74"]
+script = ExtResource("4_alqgd")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_gfsfs"]
+script = ExtResource("3_77sfw")
+text = "Great! Now just drag the bottle of hotsauce to the beans to make them spicy."
+right = false
+shaded_bg = true
+light_position = Vector2(0.547, 0.389)
+light_size = 0.85
+moving_hand = true
+hand_movement_pos1 = Vector2(628, 484)
+hand_movement_pos2 = Vector2(723, 491)
+hand_movement_speed = 2.0
+start_trigger = SubResource("Resource_5ou74")
+end_trigger = SubResource("Resource_7rydo")
+starting_actions = Array[ExtResource("5_s12gh")]([])
+ending_actions = Array[ExtResource("5_s12gh")]([])
+
+[sub_resource type="Resource" id="Resource_wc4ne"]
+script = ExtResource("4_alqgd")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_642va"]
+script = ExtResource("5_s12gh")
+type = 0
+customer_info = ExtResource("6_ahwas")
+int1 = 1
+order = Array[int]([4, 3, 3])
+bool1 = true
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_d7c6q"]
+script = ExtResource("5_s12gh")
+type = 1
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = "Pan1"
+
+[sub_resource type="Resource" id="Resource_b3xvt"]
+script = ExtResource("4_alqgd")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_4hp1h"]
+script = ExtResource("3_77sfw")
+text = "Good job! Enjoy your new recipe! And for your hard work I will give you a second pan to cook on."
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_b3xvt")
+end_trigger = SubResource("Resource_wc4ne")
+starting_actions = Array[ExtResource("5_s12gh")]([])
+ending_actions = Array[ExtResource("5_s12gh")]([SubResource("Resource_642va"), SubResource("Resource_d7c6q")])
+
+[sub_resource type="Resource" id="Resource_a7kvc"]
+script = ExtResource("4_alqgd")
+type = 7
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_5lsdq"]
+script = ExtResource("4_alqgd")
+type = 14
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_vs0w2"]
+script = ExtResource("5_s12gh")
+type = 2
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_mew73"]
+script = ExtResource("3_77sfw")
+text = ""
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_5lsdq")
+end_trigger = SubResource("Resource_a7kvc")
+starting_actions = Array[ExtResource("5_s12gh")]([SubResource("Resource_vs0w2")])
+ending_actions = Array[ExtResource("5_s12gh")]([])
+
+[resource]
+script = ExtResource("2_y15it")
+tut_name = "pan and hotsauce"
+steps = Array[ExtResource("3_77sfw")]([SubResource("Resource_l2h18"), SubResource("Resource_qrrej"), SubResource("Resource_gfsfs"), SubResource("Resource_4hp1h"), SubResource("Resource_mew73")])
+cause = SubResource("Resource_fg88f")
+num_customers = 5

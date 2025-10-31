@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="TutorialSequence" load_steps=14 format=3 uid="uid://cspdnytjw6073"]
+
+[ext_resource type="Script" path="res://scripts/classes/tutorial_cause.gd" id="1_xgtxr"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_sequence.gd" id="2_n584e"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_step.gd" id="3_edrm7"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_trigger.gd" id="4_8pquw"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_action.gd" id="5_buxua"]
+
+[sub_resource type="Resource" id="Resource_fg88f"]
+script = ExtResource("1_xgtxr")
+type = 1
+int1 = 100
+
+[sub_resource type="Resource" id="Resource_0gv34"]
+script = ExtResource("4_8pquw")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_augqk"]
+script = ExtResource("5_buxua")
+type = 1
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = "Pan2"
+
+[sub_resource type="Resource" id="Resource_uf2ps"]
+script = ExtResource("5_buxua")
+type = 1
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = "Pan3"
+
+[sub_resource type="Resource" id="Resource_54r68"]
+script = ExtResource("5_buxua")
+type = 3
+int1 = 0
+order = Array[int]([])
+bool1 = true
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_15xa5"]
+script = ExtResource("4_8pquw")
+type = 0
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_58e7a"]
+script = ExtResource("5_buxua")
+type = 3
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_4aaem"]
+script = ExtResource("3_edrm7")
+text = "Congratulations on serving 100 customers! I will now give you two more pans to cook on. You're on your own now. Good luck, chef."
+right = false
+shaded_bg = true
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_15xa5")
+end_trigger = SubResource("Resource_0gv34")
+starting_actions = Array[ExtResource("5_buxua")]([SubResource("Resource_58e7a")])
+ending_actions = Array[ExtResource("5_buxua")]([SubResource("Resource_augqk"), SubResource("Resource_uf2ps"), SubResource("Resource_54r68")])
+
+[resource]
+script = ExtResource("2_n584e")
+tut_name = "last pans"
+steps = Array[ExtResource("3_edrm7")]([SubResource("Resource_4aaem")])
+cause = SubResource("Resource_fg88f")
+num_customers = 5

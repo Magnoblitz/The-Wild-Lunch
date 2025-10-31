@@ -1,0 +1,452 @@
+[gd_resource type="Resource" script_class="TutorialSequence" load_steps=53 format=3 uid="uid://5o6l2x6tjhaw"]
+
+[ext_resource type="Script" path="res://scripts/classes/tutorial_cause.gd" id="1_6uib8"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_sequence.gd" id="1_v5ptb"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_step.gd" id="2_kopd0"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_trigger.gd" id="3_3wtj7"]
+[ext_resource type="Script" path="res://scripts/classes/tutorial_action.gd" id="3_vbj7c"]
+[ext_resource type="Resource" uid="uid://cyews8cxrbl1j" path="res://customers/farmer.tres" id="5_k3kud"]
+[ext_resource type="Resource" uid="uid://bcvajekf2x3ig" path="res://customers/farmer_daughter.tres" id="6_812ed"]
+[ext_resource type="Resource" uid="uid://dvndo567c3txk" path="res://customers/rancher.tres" id="7_3drtk"]
+[ext_resource type="Resource" uid="uid://5itl55tvmqxw" path="res://customers/baker.tres" id="8_h7l0a"]
+
+[sub_resource type="Resource" id="Resource_w2j6v"]
+script = ExtResource("1_6uib8")
+type = 0
+int1 = 0
+
+[sub_resource type="Resource" id="Resource_nw7t2"]
+script = ExtResource("3_3wtj7")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_jd00u"]
+script = ExtResource("3_vbj7c")
+type = 0
+customer_info = ExtResource("5_k3kud")
+int1 = 0
+order = Array[int]([2])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_r5gbo"]
+script = ExtResource("3_vbj7c")
+type = 5
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_tv504"]
+script = ExtResource("2_kopd0")
+text = "Hi there, I'm [color=#00aaee]Bluefoot[/color] the spirit talker (and spirit). Thank you for opening up the old saloon again. Since it's your first day I'll help you with the customers."
+right = false
+shaded_bg = true
+light_position = Vector2(-10, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+end_trigger = SubResource("Resource_nw7t2")
+starting_actions = Array[ExtResource("3_vbj7c")]([SubResource("Resource_r5gbo")])
+ending_actions = Array[ExtResource("3_vbj7c")]([SubResource("Resource_jd00u")])
+
+[sub_resource type="Resource" id="Resource_xuj5v"]
+script = ExtResource("3_3wtj7")
+type = 1
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_mckrf"]
+script = ExtResource("3_3wtj7")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_xmht1"]
+script = ExtResource("2_kopd0")
+text = "Here comes your first customer! Let's see what he wants."
+right = true
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_mckrf")
+end_trigger = SubResource("Resource_xuj5v")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([])
+
+[sub_resource type="Resource" id="Resource_2l1wv"]
+script = ExtResource("3_3wtj7")
+type = 2
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_kwrb8"]
+script = ExtResource("3_3wtj7")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_fks8s"]
+script = ExtResource("2_kopd0")
+text = "Looks like he wants a beer. What a lush. Drag a beer from the ice bucket to the customer to serve it to him."
+right = true
+shaded_bg = true
+light_position = Vector2(0.12, 0.265)
+light_size = 0.9
+moving_hand = true
+hand_movement_pos1 = Vector2(83, 321)
+hand_movement_pos2 = Vector2(225, 303)
+hand_movement_speed = 2.0
+start_trigger = SubResource("Resource_kwrb8")
+end_trigger = SubResource("Resource_2l1wv")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([])
+
+[sub_resource type="Resource" id="Resource_4qcym"]
+script = ExtResource("3_3wtj7")
+type = 6
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_unag2"]
+script = ExtResource("3_vbj7c")
+type = 0
+customer_info = ExtResource("6_812ed")
+int1 = 1
+order = Array[int]([2, 2])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_w1ru2"]
+script = ExtResource("3_3wtj7")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_k746s"]
+script = ExtResource("2_kopd0")
+text = "Good job! Now click on the money he left to collect it."
+right = true
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_w1ru2")
+end_trigger = SubResource("Resource_4qcym")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([SubResource("Resource_unag2")])
+
+[sub_resource type="Resource" id="Resource_xgwk3"]
+script = ExtResource("3_3wtj7")
+type = 1
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_c45i0"]
+script = ExtResource("3_vbj7c")
+type = 0
+customer_info = ExtResource("7_3drtk")
+int1 = 0
+order = Array[int]([2, 2, 2])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_ftpfv"]
+script = ExtResource("3_3wtj7")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_bf7tl"]
+script = ExtResource("2_kopd0")
+text = "Good. Now serve a couple of customers on your own."
+right = true
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_ftpfv")
+end_trigger = SubResource("Resource_xgwk3")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([SubResource("Resource_c45i0")])
+
+[sub_resource type="Resource" id="Resource_m02d5"]
+script = ExtResource("3_3wtj7")
+type = 7
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_a7xa4"]
+script = ExtResource("3_3wtj7")
+type = 8
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_gy6bd"]
+script = ExtResource("2_kopd0")
+text = ""
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_a7xa4")
+end_trigger = SubResource("Resource_m02d5")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([])
+
+[sub_resource type="Resource" id="Resource_x1brp"]
+script = ExtResource("3_3wtj7")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_pncq8"]
+script = ExtResource("3_vbj7c")
+type = 1
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = "Beans"
+
+[sub_resource type="Resource" id="Resource_5kn6j"]
+script = ExtResource("3_vbj7c")
+type = 0
+customer_info = ExtResource("8_h7l0a")
+int1 = 1
+order = Array[int]([0])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_hygpp"]
+script = ExtResource("3_vbj7c")
+type = 3
+int1 = 0
+order = Array[int]([])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_p5n2o"]
+script = ExtResource("3_3wtj7")
+type = 8
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_8y25f"]
+script = ExtResource("2_kopd0")
+text = "Great job! Now let's start selling some food as well."
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_p5n2o")
+end_trigger = SubResource("Resource_x1brp")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([SubResource("Resource_pncq8"), SubResource("Resource_5kn6j"), SubResource("Resource_hygpp")])
+
+[sub_resource type="Resource" id="Resource_skacs"]
+script = ExtResource("3_3wtj7")
+type = 9
+any = false
+specification_string = ""
+specification_float = 0.0
+specification_int = 0
+
+[sub_resource type="Resource" id="Resource_drccx"]
+script = ExtResource("3_3wtj7")
+type = 1
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_qekss"]
+script = ExtResource("3_vbj7c")
+type = 3
+int1 = 0
+order = Array[int]([])
+bool1 = true
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_0p4uf"]
+script = ExtResource("2_kopd0")
+text = "Drag a bowl to the main plate to place it down."
+right = false
+shaded_bg = true
+light_position = Vector2(0.47, 0.376)
+light_size = 1.0
+moving_hand = true
+hand_movement_pos1 = Vector2(484, 471)
+hand_movement_pos2 = Vector2(720, 502)
+hand_movement_speed = 2.0
+start_trigger = SubResource("Resource_drccx")
+end_trigger = SubResource("Resource_skacs")
+starting_actions = Array[ExtResource("3_vbj7c")]([SubResource("Resource_qekss")])
+ending_actions = Array[ExtResource("3_vbj7c")]([])
+
+[sub_resource type="Resource" id="Resource_doos6"]
+script = ExtResource("3_3wtj7")
+type = 9
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = 1
+
+[sub_resource type="Resource" id="Resource_i2pcq"]
+script = ExtResource("3_3wtj7")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_lwtts"]
+script = ExtResource("2_kopd0")
+text = "Now tap the cans of beans to add them to the bowl."
+right = false
+shaded_bg = true
+light_position = Vector2(0.671, 0.491)
+light_size = 0.85
+moving_hand = true
+hand_movement_pos1 = Vector2(870, 625)
+hand_movement_pos2 = Vector2(870, 625)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_i2pcq")
+end_trigger = SubResource("Resource_doos6")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([])
+
+[sub_resource type="Resource" id="Resource_uqra2"]
+script = ExtResource("3_3wtj7")
+type = 8
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_nywhm"]
+script = ExtResource("3_3wtj7")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_xo6wb"]
+script = ExtResource("2_kopd0")
+text = "Now drag the bowl of beans to the customer to serve her."
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 0.0
+start_trigger = SubResource("Resource_nywhm")
+end_trigger = SubResource("Resource_uqra2")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([])
+
+[sub_resource type="Resource" id="Resource_1eqby"]
+script = ExtResource("3_3wtj7")
+type = 5
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_t4ard"]
+script = ExtResource("3_vbj7c")
+type = 0
+customer_info = ExtResource("5_k3kud")
+int1 = 1
+order = Array[int]([2, 0])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_hvf48"]
+script = ExtResource("3_vbj7c")
+type = 0
+customer_info = ExtResource("7_3drtk")
+int1 = 2
+order = Array[int]([0, 0, 2])
+bool1 = false
+string1 = ""
+
+[sub_resource type="Resource" id="Resource_6715s"]
+script = ExtResource("3_3wtj7")
+type = 4
+any = true
+specification_string = ""
+specification_float = 0.0
+specification_int = -1
+
+[sub_resource type="Resource" id="Resource_34uso"]
+script = ExtResource("2_kopd0")
+text = "Good job! Now just serve a couple more customers to finish out the day. You ready?"
+right = false
+shaded_bg = false
+light_position = Vector2(0, 0)
+light_size = 0.85
+moving_hand = false
+hand_movement_pos1 = Vector2(0, 0)
+hand_movement_pos2 = Vector2(0, 0)
+hand_movement_speed = 1.0
+start_trigger = SubResource("Resource_6715s")
+end_trigger = SubResource("Resource_1eqby")
+starting_actions = Array[ExtResource("3_vbj7c")]([])
+ending_actions = Array[ExtResource("3_vbj7c")]([SubResource("Resource_t4ard"), SubResource("Resource_hvf48")])
+
+[resource]
+script = ExtResource("1_v5ptb")
+tut_name = "first"
+steps = Array[ExtResource("2_kopd0")]([SubResource("Resource_tv504"), SubResource("Resource_xmht1"), SubResource("Resource_fks8s"), SubResource("Resource_k746s"), SubResource("Resource_bf7tl"), SubResource("Resource_gy6bd"), SubResource("Resource_8y25f"), SubResource("Resource_0p4uf"), SubResource("Resource_lwtts"), SubResource("Resource_xo6wb"), SubResource("Resource_34uso")])
+cause = SubResource("Resource_w2j6v")
+num_customers = 6
