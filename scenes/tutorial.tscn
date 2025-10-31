@@ -1,0 +1,169 @@
+[gd_scene load_steps=14 format=3 uid="uid://b2an3a2ukbqmp"]
+
+[ext_resource type="Texture2D" uid="uid://c46uocylsg8w8" path="res://art/ghost_indian.png" id="1_m6r4n"]
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_t4wub"]
+[ext_resource type="Resource" uid="uid://5o6l2x6tjhaw" path="res://tutorials/first.tres" id="2_4mbw6"]
+[ext_resource type="FontFile" uid="uid://c4vk04l7fwb73" path="res://fonts/Roboto-VariableFont_wdth,wght.ttf" id="2_qm07q"]
+[ext_resource type="Texture2D" uid="uid://dv3bwbghhggto" path="res://art/hand.png" id="4_ydrrb"]
+[ext_resource type="FontFile" uid="uid://duuyxrpu8jtok" path="res://fonts/RobotoRegular-3m4L.ttf" id="6_3wa6c"]
+
+[sub_resource type="Gradient" id="Gradient_bx175"]
+offsets = PackedFloat32Array(0.122034, 0.179661, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.588235, 0, 0, 0, 0.784314)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a13io"]
+gradient = SubResource("Gradient_bx175")
+fill = 1
+fill_from = Vector2(0.547009, 0.388889)
+fill_to = Vector2(1, 0.850427)
+
+[sub_resource type="Gradient" id="Gradient_n1ki7"]
+offsets = PackedFloat32Array(0, 0.562712, 1)
+colors = PackedColorArray(0, 0, 0, 0.784314, 0.08, 0.08, 0.08, 0.588235, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t7etb"]
+gradient = SubResource("Gradient_n1ki7")
+fill = 1
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioap0"]
+content_margin_left = 7.0
+content_margin_top = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4ild"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kkoe"]
+bg_color = Color(0.74978, 0.74978, 0.74978, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t4wub")
+current_tutorial = ExtResource("2_4mbw6")
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = 9
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_a13io")
+
+[node name="IndianBG" type="TextureRect" parent="."]
+visible = false
+z_index = 9
+layout_mode = 0
+offset_left = 936.0
+offset_top = 240.0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_t7etb")
+flip_h = true
+
+[node name="Indian" type="TextureRect" parent="."]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 420.0
+offset_right = 1356.0
+offset_bottom = 795.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+texture = ExtResource("1_m6r4n")
+
+[node name="Text" type="RichTextLabel" parent="."]
+z_index = 9
+layout_mode = 0
+offset_left = 941.0
+offset_top = 234.0
+offset_right = 1276.0
+offset_bottom = 414.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_qm07q")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ioap0")
+bbcode_enabled = true
+text = "[wave]Hi there, I'm [color=#00aaee]Bluefoot[/color] the spirit talker (and spirit). Thank you for opening up the old saloon again. Since it's your first day I'll help you with the customers."
+shortcut_keys_enabled = false
+
+[node name="Hand" type="TextureRect" parent="."]
+modulate = Color(0.41, 0.803333, 1, 0.839216)
+z_index = 10
+layout_mode = 0
+offset_left = 723.0
+offset_top = 491.0
+offset_right = 851.0
+offset_bottom = 619.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+texture = ExtResource("4_ydrrb")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="NextButton" type="Button" parent="."]
+z_index = 9
+layout_mode = 0
+offset_left = 945.0
+offset_top = 424.0
+offset_right = 1074.0
+offset_bottom = 460.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_3wa6c")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxFlat_d4ild")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_d4ild")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5kkoe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d4ild")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d4ild")
+text = "Continue..."
+
+[connection signal="pressed" from="NextButton" to="." method="last_step_ended"]

@@ -1,0 +1,280 @@
+[gd_scene load_steps=29 format=3 uid="uid://cnraib2hieefm"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_4f082"]
+[ext_resource type="Texture2D" uid="uid://bco5ql0qce385" path="res://art/background.png" id="1_5ilbp"]
+[ext_resource type="Texture2D" uid="uid://b7etlfqlco1ku" path="res://art/foreground.png" id="3_64rk7"]
+[ext_resource type="Script" path="res://scripts/kitchen.gd" id="6_8rygx"]
+[ext_resource type="Texture2D" uid="uid://d2q7cwk7tvg81" path="res://art/plate.png" id="7_wqxhs"]
+[ext_resource type="Texture2D" uid="uid://dppvr8u7os5gd" path="res://art/can_of_beans.png" id="8_dxaos"]
+[ext_resource type="Texture2D" uid="uid://biiynausbtoxx" path="res://art/stack_of_bowls.png" id="9_nsfx5"]
+[ext_resource type="Texture2D" uid="uid://bhrt4mlnadpsm" path="res://art/bowl_of_beans.png" id="9_yc5of"]
+[ext_resource type="Resource" uid="uid://vc6456xkrnms" path="res://plate_states/main_plate/empty.tres" id="10_m6vj0"]
+[ext_resource type="Texture2D" uid="uid://c0f3ia5sc3usd" path="res://art/coin.png" id="12_b6dod"]
+[ext_resource type="Script" path="res://scripts/game_ui.gd" id="12_hqpel"]
+[ext_resource type="Texture2D" uid="uid://diyvpwt30p3k7" path="res://art/trash_can.png" id="15_07q1x"]
+[ext_resource type="Texture2D" uid="uid://o4b8g7p8g6ak" path="res://art/customer_icon.png" id="15_rnjt2"]
+[ext_resource type="Texture2D" uid="uid://b288kwhutu7nd" path="res://art/oven.png" id="15_uiuyb"]
+[ext_resource type="Texture2D" uid="uid://dpw5kl64x7rhm" path="res://art/oven_on1.png" id="16_sncys"]
+[ext_resource type="Texture2D" uid="uid://dnf8jcq7imni3" path="res://art/oven_on2.png" id="17_5kio1"]
+[ext_resource type="Script" path="res://scripts/food_holder.gd" id="17_wtioq"]
+[ext_resource type="Texture2D" uid="uid://c5o3dv2uh5ewp" path="res://art/cornbread_mix_box.png" id="18_jgvn2"]
+
+[sub_resource type="GDScript" id="GDScript_n1rfn"]
+script/source = "extends Sprite2D
+class_name Plate
+
+@export var plate_state : PlateState
+@export var empty_plate_state : PlateState
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kegd5"]
+size = Vector2(92.4444, 92.4445)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd3tp"]
+size = Vector2(69.0424, 103.952)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0on52"]
+radius = 64.4129
+height = 198.193
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgtav"]
+size = Vector2(113, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aooim"]
+size = Vector2(92, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5vid"]
+size = Vector2(124.82, 130.385)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncya3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_uiuyb")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_sncys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5kio1")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftjfa"]
+size = Vector2(99.651, 95.3557)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jljte"]
+size = Vector2(125.357, 126.429)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_4f082")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_5ilbp")
+
+[node name="Customers" type="Node2D" parent="."]
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("3_64rk7")
+
+[node name="Kitchen" type="Node2D" parent="." node_paths=PackedStringArray("main_plate", "oven", "customer_container")]
+script = ExtResource("6_8rygx")
+main_plate = NodePath("MainPlate")
+oven = NodePath("Oven/Oven")
+customer_container = NodePath("../Customers")
+
+[node name="Plate" type="Sprite2D" parent="Kitchen"]
+visible = false
+position = Vector2(647, 593)
+scale = Vector2(1.40625, 1.40625)
+texture = ExtResource("7_wqxhs")
+script = SubResource("GDScript_n1rfn")
+plate_state = ExtResource("10_m6vj0")
+empty_plate_state = ExtResource("10_m6vj0")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Plate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Plate/Area2D"]
+position = Vector2(0.711121, -16.3556)
+shape = SubResource("RectangleShape2D_kegd5")
+
+[node name="Food" type="Sprite2D" parent="Kitchen/Plate"]
+position = Vector2(0.711121, -15.6444)
+scale = Vector2(0.711111, 0.711111)
+texture = ExtResource("9_yc5of")
+
+[node name="Beans" type="Sprite2D" parent="Kitchen"]
+position = Vector2(1198, 579)
+scale = Vector2(1.28906, 1.28906)
+texture = ExtResource("8_dxaos")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Beans"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Beans/Area2D"]
+position = Vector2(-0.387878, 1.55145)
+shape = SubResource("RectangleShape2D_kd3tp")
+
+[node name="Bowls" type="Sprite2D" parent="Kitchen"]
+position = Vector2(138, 540)
+scale = Vector2(1.21094, 1.21094)
+texture = ExtResource("9_nsfx5")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Bowls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Bowls/Area2D"]
+shape = SubResource("CapsuleShape2D_0on52")
+
+[node name="DraggingFood" type="Sprite2D" parent="Kitchen"]
+visible = false
+position = Vector2(426, 541)
+scale = Vector2(0.949306, 0.949306)
+texture = ExtResource("9_yc5of")
+
+[node name="Coins" type="Node2D" parent="Kitchen"]
+position = Vector2(0, 480)
+
+[node name="TrashCan" type="Sprite2D" parent="Kitchen"]
+position = Vector2(320, 620)
+texture = ExtResource("15_07q1x")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/TrashCan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/TrashCan/Area2D"]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_hgtav")
+
+[node name="CornbreadMix" type="Sprite2D" parent="Kitchen"]
+position = Vector2(1073, 608)
+texture = ExtResource("18_jgvn2")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/CornbreadMix"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/CornbreadMix/Area2D"]
+position = Vector2(3, -1.5)
+shape = SubResource("RectangleShape2D_aooim")
+
+[node name="MainPlate" type="Node2D" parent="Kitchen"]
+script = ExtResource("17_wtioq")
+plate_state = ExtResource("10_m6vj0")
+empty_plate_state = ExtResource("10_m6vj0")
+
+[node name="Plate" type="Sprite2D" parent="Kitchen/MainPlate"]
+self_modulate = Color(0.560784, 0.65098, 0.611765, 1)
+position = Vector2(538, 551)
+scale = Vector2(1.25781, 1.25781)
+texture = ExtResource("7_wqxhs")
+
+[node name="Food" type="Sprite2D" parent="Kitchen/MainPlate"]
+position = Vector2(539, 515)
+scale = Vector2(1.25781, 1.25781)
+texture = ExtResource("9_yc5of")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/MainPlate/Food"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/MainPlate/Food/Area2D"]
+position = Vector2(-1.1926, -1.59009)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_d5vid")
+
+[node name="Oven" type="Node2D" parent="Kitchen"]
+script = ExtResource("17_wtioq")
+plate_state = ExtResource("10_m6vj0")
+empty_plate_state = ExtResource("10_m6vj0")
+
+[node name="Oven" type="AnimatedSprite2D" parent="Kitchen/Oven"]
+position = Vector2(902, 614)
+scale = Vector2(1.3125, 1.3125)
+sprite_frames = SubResource("SpriteFrames_ncya3")
+animation = &"off"
+autoplay = "off"
+frame_progress = 0.603118
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Oven/Oven"]
+position = Vector2(-4, -3)
+scale = Vector2(1.16406, 1.16406)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Oven/Oven/Area2D"]
+position = Vector2(2.57718, 2.14765)
+shape = SubResource("RectangleShape2D_ftjfa")
+
+[node name="Food" type="Sprite2D" parent="Kitchen/Oven"]
+position = Vector2(902, 658)
+scale = Vector2(0.933333, 0.933333)
+texture = ExtResource("9_yc5of")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Oven/Food"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Oven/Food/Area2D"]
+position = Vector2(-0.535645, -2.14288)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jljte")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_hqpel")
+
+[node name="CustomersRemaining" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 3.0
+offset_right = 873.0
+offset_bottom = 87.0
+theme_override_font_sizes/normal_font_size = 61
+text = "0"
+fit_content = true
+autowrap_mode = 0
+tab_size = 24
+
+[node name="CustomerImage" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 3.0
+offset_right = 1005.0
+offset_bottom = 131.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_rnjt2")
+
+[node name="Coins" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 6.0
+offset_right = 1142.0
+offset_bottom = 90.0
+theme_override_font_sizes/normal_font_size = 61
+text = "0"
+fit_content = true
+autowrap_mode = 0
+tab_size = 24
+
+[node name="CoinImage" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 1146.0
+offset_top = -5.0
+offset_right = 1274.0
+offset_bottom = 123.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_b6dod")
+
+[connection signal="input_event" from="Kitchen/Plate/Area2D" to="Kitchen" method="plate_touched" binds= ["main plate"]]
+[connection signal="input_event" from="Kitchen/Beans/Area2D" to="Kitchen" method="receive_action" binds= [1]]
+[connection signal="input_event" from="Kitchen/Bowls/Area2D" to="Kitchen" method="receive_action" binds= [0]]
+[connection signal="mouse_entered" from="Kitchen/TrashCan/Area2D" to="Kitchen" method="mouse_entered_region" binds= [-1]]
+[connection signal="mouse_exited" from="Kitchen/TrashCan/Area2D" to="Kitchen" method="mouse_exited_region"]
+[connection signal="input_event" from="Kitchen/CornbreadMix/Area2D" to="Kitchen" method="receive_action" binds= [2]]
+[connection signal="input_event" from="Kitchen/MainPlate/Food/Area2D" to="Kitchen" method="plate_touched" binds= ["MainPlate"]]
+[connection signal="mouse_entered" from="Kitchen/Oven/Oven/Area2D" to="Kitchen" method="mouse_entered_region" binds= [-2]]
+[connection signal="mouse_exited" from="Kitchen/Oven/Oven/Area2D" to="Kitchen" method="mouse_exited_region"]
+[connection signal="input_event" from="Kitchen/Oven/Food/Area2D" to="Kitchen" method="plate_touched" binds= ["Oven"]]

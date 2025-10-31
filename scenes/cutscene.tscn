@@ -1,0 +1,558 @@
+[gd_scene load_steps=37 format=3 uid="uid://c0ly3y8l6h3ms"]
+
+[ext_resource type="Script" path="res://scripts/intro_cutscene.gd" id="1_s81hx"]
+[ext_resource type="Shader" path="res://shaders/sunlight.gdshader" id="3_qa6pm"]
+[ext_resource type="Shader" path="res://shaders/clouds.gdshader" id="3_s2o8m"]
+[ext_resource type="Texture2D" uid="uid://coug0xj6lvb2n" path="res://art/smoke_particle.png" id="3_sgfwi"]
+[ext_resource type="Texture2D" uid="uid://dn1bfawnln5gl" path="res://art/wagon.png" id="7_8il6r"]
+[ext_resource type="Texture2D" uid="uid://cj106cvjksdy4" path="res://art/cutscene_path.png" id="8_82c3o"]
+[ext_resource type="Texture2D" uid="uid://dx158uwdqtbf0" path="res://art/cutscene_foliage.png" id="8_of5vn"]
+[ext_resource type="Texture2D" uid="uid://djejqo7s5do8e" path="res://art/wagon_wheel.png" id="8_pwy7n"]
+[ext_resource type="Script" path="res://scripts/rotate.gd" id="9_mmqwe"]
+[ext_resource type="Texture2D" uid="uid://b63hjhlap20hb" path="res://art/restaurant_exterior_dilapidated.png" id="10_dmmd3"]
+[ext_resource type="Texture2D" uid="uid://bkr04fxvqq05" path="res://art/ghost_indian_fullbody.png" id="11_f3wpn"]
+[ext_resource type="Shader" path="res://shaders/ghost.gdshader" id="11_t3yih"]
+[ext_resource type="FontFile" uid="uid://duuyxrpu8jtok" path="res://fonts/RobotoRegular-3m4L.ttf" id="13_gmhe1"]
+[ext_resource type="Texture2D" uid="uid://btt8t5y27dttn" path="res://art/intro_falling_plank.png" id="13_y7jka"]
+[ext_resource type="Texture2D" uid="uid://ddka3nw5wcg8o" path="res://art/intro_silhouette_female.png" id="14_n8dfh"]
+
+[sub_resource type="Gradient" id="Gradient_nqaqg"]
+offsets = PackedFloat32Array(0, 0.415541, 0.527027, 1)
+colors = PackedColorArray(0.837089, 0.853983, 7.70092e-07, 1, 0.865708, 0.741851, 0.0224183, 1, 0.911507, 0.562411, 0.0582922, 1, 0.999999, 0.215695, 0.127608, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rxjpi"]
+gradient = SubResource("Gradient_nqaqg")
+fill = 1
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_ja4rf"]
+offsets = PackedFloat32Array(0.174242, 0.863636)
+colors = PackedColorArray(0.0826446, 0.0826446, 0.0826446, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wf515"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hai83"]
+width = 1100
+seamless = true
+seamless_blend_skirt = 0.6
+color_ramp = SubResource("Gradient_ja4rf")
+noise = SubResource("FastNoiseLite_wf515")
+
+[sub_resource type="Gradient" id="Gradient_heun2"]
+offsets = PackedFloat32Array(0.242424, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_roupg"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g304i"]
+seamless = true
+color_ramp = SubResource("Gradient_heun2")
+noise = SubResource("FastNoiseLite_roupg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iex4h"]
+shader = ExtResource("3_s2o8m")
+shader_parameter/color = Color(1, 0.45098, 0.2, 1)
+shader_parameter/perlin_noise = SubResource("NoiseTexture2D_g304i")
+shader_parameter/cell_noise = SubResource("NoiseTexture2D_hai83")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgvbk"]
+shader = ExtResource("3_qa6pm")
+shader_parameter/light_center = Vector2(0.5, 0)
+shader_parameter/light_color = Color(0.777822, 0.782588, 0.353246, 1)
+shader_parameter/radius = 0.15
+shader_parameter/intensity = 0.965
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kd5a1"]
+shader = ExtResource("11_t3yih")
+shader_parameter/speed = 2.805
+shader_parameter/frequency = 25.0
+shader_parameter/wavelength = 0.01
+shader_parameter/modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx6i8"]
+size = Vector2(34.0144, 455.723)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_leqc5"]
+size = Vector2(1316.5, 88.5)
+
+[sub_resource type="Gradient" id="Gradient_wmb1d"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_odjn6"]
+gradient = SubResource("Gradient_wmb1d")
+width = 1
+
+[sub_resource type="Animation" id="Animation_miv1p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1126, 472)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(642, 376)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sky:texture:fill_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CutscenePath/Sunlight:material:shader_parameter/radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.15]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Foliage:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.712129, 0.712129, 0.712129, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../DirtyRestaurantScene/CutsceneSilhouette:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(662, 937)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../WorkScene/Text:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(57, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_3w261"]
+resource_name = "restaurant"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../DirtyRestaurantScene/CutsceneSilhouette:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5, 10, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(662, 937), Vector2(662, 937), Vector2(662, 615), Vector2(662, 615)]
+}
+
+[sub_resource type="Animation" id="Animation_0rhtw"]
+resource_name = "move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 0.633333, 0.833333, 1.1, 2.13333, 2.36667, 2.63333, 4, 4.16667, 4.33333, 5.96667, 6.23333, 6.5, 7.9, 8.06667, 8.3, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1126, 403), Vector2(1041.22, 403), Vector2(1011.54, 398), Vector2(977.985, 403), Vector2(847.953, 403), Vector2(818.591, 397), Vector2(785.034, 403), Vector2(613.056, 403), Vector2(591.86, 400), Vector2(570.664, 403), Vector2(362.943, 403), Vector2(324.791, 399), Vector2(291.177, 403), Vector2(114.706, 403), Vector2(93.698, 398), Vector2(64.2859, 403), Vector2(-150, 403)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(642, 500), Vector2(642, 300)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sky:texture:fill_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0), Vector2(1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CutscenePath/Sunlight:material:shader_parameter/radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.15, 0.43]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Foliage:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.712129, 0.712129, 0.712129, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ywptn"]
+resource_name = "work"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../WorkScene/Text:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(57, 125), Vector2(1100, 125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mcwet"]
+_data = {
+"RESET": SubResource("Animation_miv1p"),
+"restaurant": SubResource("Animation_3w261"),
+"wagon": SubResource("Animation_0rhtw"),
+"work": SubResource("Animation_ywptn")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gol27"]
+bg_color = Color(0.1, 0.1, 0.1, 0.647059)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_s81hx")
+
+[node name="WagonScene" type="Node2D" parent="."]
+visible = false
+
+[node name="Sky" type="Sprite2D" parent="WagonScene"]
+position = Vector2(639.942, 198.67)
+rotation = -1.57079
+scale = Vector2(6.20254, 19.9981)
+texture = SubResource("GradientTexture2D_rxjpi")
+
+[node name="Sun" type="Sprite2D" parent="WagonScene"]
+position = Vector2(642, 376)
+scale = Vector2(11.812, 11.812)
+texture = ExtResource("3_sgfwi")
+
+[node name="Clouds" type="ColorRect" parent="WagonScene"]
+clip_children = 2
+material = SubResource("ShaderMaterial_iex4h")
+offset_top = -214.0
+offset_right = 1280.0
+offset_bottom = 397.0
+
+[node name="CutscenePath" type="Sprite2D" parent="WagonScene"]
+clip_children = 2
+position = Vector2(640, 571)
+texture = ExtResource("8_82c3o")
+
+[node name="Sunlight" type="ColorRect" parent="WagonScene/CutscenePath"]
+clip_children = 2
+material = SubResource("ShaderMaterial_jgvbk")
+offset_left = -640.0
+offset_top = -182.0
+offset_right = 640.0
+offset_bottom = 521.0
+
+[node name="Foliage" type="Node2D" parent="WagonScene"]
+modulate = Color(0.712129, 0.712129, 0.712129, 1)
+
+[node name="CutsceneFoliage" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(31, 370)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage2" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(111, 370)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage3" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(197, 371)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage4" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(280, 370)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage5" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(356, 372)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage6" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(444, 374)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage7" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(537, 376)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage8" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(613, 373)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage9" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(691, 375)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage10" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(767, 374)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage11" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(852, 371)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage12" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(938, 375)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage13" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(1038, 374)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage14" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(1126, 377)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage15" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(1226, 373)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage16" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(57, 390)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage17" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(169, 392)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage19" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(310, 389)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage21" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(483.048, 394.7)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage23" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(642, 388)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage26" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(884, 393)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage28" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(1162, 389)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="CutsceneFoliage29" type="Sprite2D" parent="WagonScene/Foliage"]
+position = Vector2(1248, 393)
+scale = Vector2(0.657, 0.657)
+texture = ExtResource("8_of5vn")
+
+[node name="Wagon" type="Sprite2D" parent="WagonScene"]
+z_index = 2
+position = Vector2(1126, 472)
+texture = ExtResource("7_8il6r")
+
+[node name="FrontRight" type="Sprite2D" parent="WagonScene/Wagon"]
+position = Vector2(-38, 99)
+scale = Vector2(0.89, 0.89)
+texture = ExtResource("8_pwy7n")
+script = ExtResource("9_mmqwe")
+rotate_speed = -1.4
+
+[node name="BackRight" type="Sprite2D" parent="WagonScene/Wagon"]
+position = Vector2(94, 87)
+scale = Vector2(0.97, 0.97)
+texture = ExtResource("8_pwy7n")
+script = ExtResource("9_mmqwe")
+rotate_speed = -1.4
+
+[node name="FrontLeft" type="Sprite2D" parent="WagonScene/Wagon"]
+z_index = -1
+position = Vector2(-112, 85)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("8_pwy7n")
+script = ExtResource("9_mmqwe")
+rotate_speed = -1.4
+
+[node name="BackLeft" type="Sprite2D" parent="WagonScene/Wagon"]
+z_index = -1
+position = Vector2(-18, 78)
+scale = Vector2(0.775, 0.775)
+texture = ExtResource("8_pwy7n")
+script = ExtResource("9_mmqwe")
+rotate_speed = -1.4
+
+[node name="DirtyRestaurantScene" type="Node2D" parent="."]
+
+[node name="BG" type="Sprite2D" parent="DirtyRestaurantScene"]
+position = Vector2(640, 360)
+texture = ExtResource("10_dmmd3")
+
+[node name="Ghost" type="Sprite2D" parent="DirtyRestaurantScene"]
+modulate = Color(1, 1, 1, 0.72549)
+material = SubResource("ShaderMaterial_kd5a1")
+position = Vector2(843.844, 492.469)
+scale = Vector2(0.434375, 0.434375)
+texture = ExtResource("11_f3wpn")
+
+[node name="Plank" type="RigidBody2D" parent="DirtyRestaurantScene"]
+position = Vector2(926, 468)
+rotation = -0.0255722
+
+[node name="Plank" type="Sprite2D" parent="DirtyRestaurantScene/Plank"]
+texture = ExtResource("13_y7jka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtyRestaurantScene/Plank"]
+position = Vector2(0.844482, -0.756714)
+shape = SubResource("RectangleShape2D_nx6i8")
+
+[node name="Floor" type="StaticBody2D" parent="DirtyRestaurantScene"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtyRestaurantScene/Floor"]
+position = Vector2(659.75, 763.75)
+shape = SubResource("RectangleShape2D_leqc5")
+
+[node name="CutsceneSilhouette" type="Sprite2D" parent="DirtyRestaurantScene"]
+position = Vector2(662, 937)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("14_n8dfh")
+
+[node name="WorkScene" type="Node2D" parent="."]
+visible = false
+
+[node name="BG" type="Sprite2D" parent="WorkScene"]
+position = Vector2(640, 360)
+scale = Vector2(1280, 720)
+texture = SubResource("GradientTexture1D_odjn6")
+
+[node name="Text" type="Label" parent="WorkScene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 306.0
+offset_right = 185.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_gmhe1")
+theme_override_font_sizes/font_size = 106
+text = "You have work to do..."
+text_overrun_behavior = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../WagonScene/Wagon")
+libraries = {
+"": SubResource("AnimationLibrary_mcwet")
+}
+autoplay = "wagon"
+
+[node name="SkipText" type="Label" parent="."]
+offset_left = 1045.0
+offset_top = 680.0
+offset_right = 1270.0
+offset_bottom = 712.0
+theme_override_fonts/font = ExtResource("13_gmhe1")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_gol27")
+text = "'S' to skip cutscene"
+
+[node name="MuteText" type="Label" parent="."]
+offset_left = 962.0
+offset_top = 644.0
+offset_right = 1270.0
+offset_bottom = 676.0
+theme_override_fonts/font = ExtResource("13_gmhe1")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_gol27")
+text = "'M' to mute/unmute music"

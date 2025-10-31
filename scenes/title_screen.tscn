@@ -1,0 +1,652 @@
+[gd_scene load_steps=63 format=3 uid="uid://cqbi77jmitmge"]
+
+[ext_resource type="Texture2D" uid="uid://drobrnnq0xsru" path="res://art/title_screen.png" id="1_a14ic"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_i1qap"]
+[ext_resource type="FontFile" uid="uid://bx48xwsk6trgs" path="res://fonts/TEXAT BOLD PERSONAL USE___.otf" id="1_n2c6s"]
+[ext_resource type="Script" path="res://scripts/classes/joke.gd" id="2_8qtfl"]
+[ext_resource type="FontFile" uid="uid://dsjc5hlpxdg7g" path="res://fonts/LemonJellyPersonalUse-dEqR.ttf" id="2_hginh"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_vk28f"]
+[ext_resource type="Texture2D" uid="uid://biq48482dqivo" path="res://art/title_text.png" id="5_ds524"]
+[ext_resource type="Texture2D" uid="uid://bprlep7qvtigy" path="res://art/gramophone.png" id="5_qa5v8"]
+[ext_resource type="Texture2D" uid="uid://xhdcfctp23au" path="res://art/title_screen_man_hands1.png" id="6_fey0v"]
+[ext_resource type="Texture2D" uid="uid://gw44brq0mtcc" path="res://art/title_screen_man.png" id="6_tf30w"]
+[ext_resource type="Texture2D" uid="uid://di58mp2tghteg" path="res://art/title_screen_man_nose.png" id="7_62der"]
+[ext_resource type="Texture2D" uid="uid://verc6mw0i8au" path="res://art/title_screen_man_hands2.png" id="7_prdh6"]
+[ext_resource type="Texture2D" uid="uid://bwyi4fahmmybj" path="res://art/request_bubble.png" id="7_ygmf1"]
+[ext_resource type="FontFile" uid="uid://bxlev06p3y33p" path="res://fonts/Orasi-rv0v8.otf" id="8_ig07y"]
+[ext_resource type="Texture2D" uid="uid://c2vrhlxrgpv36" path="res://art/title_screen_man_hands3.png" id="8_n7gyw"]
+[ext_resource type="Texture2D" uid="uid://b1cm3vkvdwnci" path="res://art/fullscreen_button.png" id="16_el26r"]
+[ext_resource type="PackedScene" uid="uid://7edv7bru3j4d" path="res://scene_objects/settings.tscn" id="17_0erf5"]
+[ext_resource type="FontFile" uid="uid://duuyxrpu8jtok" path="res://fonts/RobotoRegular-3m4L.ttf" id="18_hsgq4"]
+[ext_resource type="FontFile" uid="uid://bpi354yxdl8xm" path="res://fonts/Montserrat-VariableFont_wght.ttf" id="19_sk7fn"]
+[ext_resource type="Texture2D" uid="uid://cb151nhv3o8xh" path="res://art/no_ai.png" id="20_7rgqf"]
+
+[sub_resource type="Resource" id="Resource_jmacn"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["A horse walked into a bar.", "The bartender asked, \"Why the long face?\""])
+
+[sub_resource type="Resource" id="Resource_pnaxh"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["Why can you never take a cowboy seriously?", "They're always horsing around."])
+
+[sub_resource type="Resource" id="Resource_5hw2o"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["What do cowboys call midnight?", "High moon."])
+
+[sub_resource type="Resource" id="Resource_iupmv"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["What do you call a happy cowboy?", "A jolly rancher."])
+
+[sub_resource type="Resource" id="Resource_0ghf0"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["Why do cowboys always ride horses?", "Because they’re too heavy to carry!"])
+
+[sub_resource type="Resource" id="Resource_egbw3"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["What do ghost cowboys wear?", "BOO-ts."])
+
+[sub_resource type="Resource" id="Resource_k8eqa"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["Where do cowboys cook their beans?", "On the range."])
+
+[sub_resource type="Resource" id="Resource_rsb7y"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["What’s a cowboy’s least favorite car?", "A cattle-lack."])
+
+[sub_resource type="Resource" id="Resource_adajq"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["What is it called when a cowboy dies and comes back to life?", "Re-intarnation."])
+
+[sub_resource type="Resource" id="Resource_2byoc"]
+script = ExtResource("2_8qtfl")
+lines = Array[String](["What do you call a cowboy’s outfit?", "Ranch dressing."])
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j83aw"]
+shader = ExtResource("4_vk28f")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 2.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qumaj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hxbne"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0oox0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81a8q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ybh6"]
+
+[sub_resource type="Animation" id="Animation_hwk1f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qupjn"]
+resource_name = "pulse"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_si6m3"]
+_data = {
+"RESET": SubResource("Animation_hwk1f"),
+"pulse": SubResource("Animation_qupjn")
+}
+
+[sub_resource type="Animation" id="Animation_lqx2n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hands:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mask/Man:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 87)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nose:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4acoo"]
+resource_name = "hands_emerge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hands:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_fey0v"), ExtResource("7_prdh6"), ExtResource("8_n7gyw")]
+}
+
+[sub_resource type="Animation" id="Animation_bk5yr"]
+resource_name = "man_duck"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mask/Man:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, 22), Vector2(20, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hands:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.25, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_n7gyw"), ExtResource("8_n7gyw"), ExtResource("7_prdh6"), ExtResource("6_fey0v"), null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nose:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_21qkv"]
+resource_name = "man_emerge"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mask/Man:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, 87), Vector2(20, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nose:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.3),
+"transitions": PackedFloat32Array(1, 0.378929, 0.378929),
+"update": 0,
+"values": [Vector2(0.63, 0), Vector2(0.63, 0), Vector2(0.63, 0.63)]
+}
+
+[sub_resource type="Animation" id="Animation_svpu6"]
+resource_name = "scuttle"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(104, 0), Vector2(-20, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_finfi"]
+_data = {
+"RESET": SubResource("Animation_lqx2n"),
+"hands_emerge": SubResource("Animation_4acoo"),
+"man_duck": SubResource("Animation_bk5yr"),
+"man_emerge": SubResource("Animation_21qkv"),
+"scuttle": SubResource("Animation_svpu6")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eg55g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51a7j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nefd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pc7dp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqojx"]
+bg_color = Color(0.340339, 0.340339, 0.340339, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="FontVariation" id="FontVariation_tnpc4"]
+base_font = ExtResource("19_sk7fn")
+variation_embolden = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwhyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fupw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83rrp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7n0vl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qux6u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1n5dq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktk3f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2pdg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4eovy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yi752"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2daj"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i1qap")
+joke_line_time = 3.5
+jokes = Array[ExtResource("2_8qtfl")]([SubResource("Resource_jmacn"), SubResource("Resource_pnaxh"), SubResource("Resource_5hw2o"), SubResource("Resource_iupmv"), SubResource("Resource_0ghf0"), SubResource("Resource_egbw3"), SubResource("Resource_k8eqa"), SubResource("Resource_rsb7y"), SubResource("Resource_adajq"), SubResource("Resource_2byoc")])
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_a14ic")
+
+[node name="BG2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_j83aw")
+layout_mode = 0
+offset_left = 229.0
+offset_top = 13.0
+offset_right = 1249.0
+offset_bottom = 447.0
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("5_ds524")
+
+[node name="Title" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 1266.0
+offset_bottom = 621.0
+theme_override_colors/default_color = Color(0.998288, 0.941498, 0.887462, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("1_n2c6s")
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[center]The Wild Lunch"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 537.0
+offset_right = 370.0
+offset_bottom = 699.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.641934, 0.641934, 0.641934, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_hginh")
+theme_override_font_sizes/font_size = 111
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qumaj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hxbne")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0oox0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_81a8q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ybh6")
+text = "Settings"
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 537.0
+offset_right = 739.0
+offset_bottom = 699.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.641934, 0.641934, 0.641934, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_hginh")
+theme_override_font_sizes/font_size = 111
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qumaj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hxbne")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0oox0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_81a8q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ybh6")
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 537.0
+offset_right = 1114.0
+offset_bottom = 699.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.641934, 0.641934, 0.641934, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_hginh")
+theme_override_font_sizes/font_size = 111
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qumaj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hxbne")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0oox0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_81a8q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ybh6")
+text = "Exit"
+
+[node name="SoundButton" type="TextureButton" parent="."]
+self_modulate = Color(0.886376, 0.760145, 0.378968, 1)
+layout_mode = 0
+offset_left = 1163.0
+offset_top = 590.0
+offset_right = 1291.0
+offset_bottom = 718.0
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("5_qa5v8")
+
+[node name="Slash" type="ColorRect" parent="SoundButton"]
+visible = false
+layout_mode = 0
+offset_left = 107.0
+offset_top = 21.0
+offset_right = 121.0
+offset_bottom = 162.0
+rotation = 0.858758
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Anim" type="AnimationPlayer" parent="SoundButton"]
+libraries = {
+"": SubResource("AnimationLibrary_si6m3")
+}
+
+[node name="Man" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Mask" type="TextureRect" parent="Man"]
+clip_contents = true
+layout_mode = 0
+offset_left = 988.0
+offset_top = 110.0
+offset_right = 1199.0
+offset_bottom = 210.0
+mouse_filter = 2
+
+[node name="Man" type="TextureRect" parent="Man/Mask"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 87.0
+offset_right = 177.0
+offset_bottom = 224.0
+mouse_filter = 2
+texture = ExtResource("6_tf30w")
+
+[node name="Nose" type="TextureRect" parent="Man"]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = 186.0
+offset_right = 1157.0
+offset_bottom = 286.0
+scale = Vector2(1, 1e-05)
+mouse_filter = 2
+texture = ExtResource("7_62der")
+
+[node name="NoseButton" type="Button" parent="Man/Nose"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 5.0
+offset_right = 79.0
+offset_bottom = 94.0
+
+[node name="Hands" type="TextureRect" parent="Man"]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 196.0
+offset_right = 1180.0
+offset_bottom = 237.0
+mouse_filter = 2
+
+[node name="Bubble" type="TextureRect" parent="Man"]
+visible = false
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 11.0
+offset_right = 1302.0
+offset_bottom = 171.0
+scale = Vector2(0.865, 0.865)
+mouse_filter = 2
+texture = ExtResource("7_ygmf1")
+
+[node name="Joke" type="Label" parent="Man/Bubble"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = -2.31214
+offset_right = 188.0
+offset_bottom = 176.688
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ig07y")
+theme_override_font_sizes/font_size = 18
+text = "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="Man"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Anim" type="AnimationPlayer" parent="Man"]
+libraries = {
+"": SubResource("AnimationLibrary_finfi")
+}
+
+[node name="FullscreenButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 69.0
+offset_bottom = 68.0
+texture_normal = ExtResource("16_el26r")
+
+[node name="Settings" parent="." instance=ExtResource("17_0erf5")]
+visible = false
+layout_mode = 0
+offset_right = 859.0
+offset_bottom = 472.0
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 672.0
+offset_right = 127.0
+offset_bottom = 727.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("18_hsgq4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eg55g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eg55g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51a7j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nefd8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pc7dp")
+text = "Credits"
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="Panel" parent="Credits"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 110.0
+offset_right = 920.0
+offset_bottom = 610.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqojx")
+
+[node name="X" type="Button" parent="Credits"]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 79.0
+offset_right = 949.0
+offset_bottom = 160.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("FontVariation_tnpc4")
+theme_override_font_sizes/font_size = 66
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pwhyw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fupw8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_83rrp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7n0vl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qux6u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1n5dq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ktk3f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_b2pdg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4eovy")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yi752")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b2daj")
+text = "X"
+
+[node name="Title" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 101.0
+offset_right = 920.0
+offset_bottom = 209.0
+theme_override_fonts/font = ExtResource("18_hsgq4")
+theme_override_font_sizes/font_size = 91
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="Credits"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 204.0
+offset_right = 920.0
+offset_bottom = 624.0
+theme_override_fonts/normal_font = ExtResource("18_hsgq4")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "All game design, art, and code done by Ryan Montgomery (Magnoblitz).
+Links: [color=red][url=https://www.reddit.com/user/Successful-Crew-5343/]Reddit[/url], [color=yellow][url=https://magnoblitz.itch.io/]itch.io[/url], [color=green][url=https://magnoblitz.github.io/]my website.[/url][color=white]
+
+Sfx from [color=blue][url=https://pixabay.com/sound-effects/]pixabay.[/url][color=white]
+Music from [color=blue][url=https://app.soundstripe.com/]soundstripe.[/url][color=white]
+
+The game's name \"The Wild Bunch\" was suggested by Reddit user [color=red][url=https://www.reddit.com/user/dante_elric/]u/dante_elric.[/url][color=white]
+
+Development started March 17, 2025."
+
+[node name="NoAI" type="TextureRect" parent="Credits"]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 110.0
+offset_right = 489.0
+offset_bottom = 238.0
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("20_7rgqf")
+
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="play_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="Man/Nose/NoseButton" to="." method="_on_nose_pressed"]
+[connection signal="timeout" from="Man/Timer" to="." method="man_appear"]
+[connection signal="animation_finished" from="Man/Anim" to="." method="_on_man_anim_animation_finished"]
+[connection signal="pressed" from="FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Credits/X" to="." method="_on_credits_x_pressed"]
+[connection signal="meta_clicked" from="Credits/Text" to="." method="_on_text_meta_clicked"]

@@ -1,0 +1,270 @@
+[gd_scene load_steps=25 format=3 uid="uid://yfkm1htliit4"]
+
+[ext_resource type="Script" path="res://scripts/between_days_menu.gd" id="1_nkd48"]
+[ext_resource type="FontFile" uid="uid://b54gq8kcujcaj" path="res://fonts/TheWildBunch-Regular.ttf" id="1_yryh4"]
+[ext_resource type="Texture2D" uid="uid://cxc8kxvtwxnrt" path="res://art/old_paper.png" id="2_ljggs"]
+[ext_resource type="Texture2D" uid="uid://bys6fpkxe0v5r" path="res://art/character_man.png" id="2_nxwi5"]
+[ext_resource type="Texture2D" uid="uid://bvkqip564q30" path="res://art/leather.jpg" id="2_ucw8l"]
+[ext_resource type="Texture2D" uid="uid://dqh53xpqkxor8" path="res://art/map.png" id="2_xgj11"]
+[ext_resource type="FontFile" uid="uid://bls01hn2x3u4n" path="res://fonts/Carnevalee Freakshow.ttf" id="3_l5txa"]
+[ext_resource type="Texture2D" uid="uid://c0f3ia5sc3usd" path="res://art/coin.png" id="3_notq6"]
+[ext_resource type="Texture2D" uid="uid://0jelragyeheo" path="res://art/spring_symbol.png" id="7_jykw2"]
+[ext_resource type="PackedScene" uid="uid://cp6ot8bse7lwc" path="res://scenes/menu.tscn" id="8_cw18g"]
+[ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="9_ovri5"]
+[ext_resource type="Texture2D" uid="uid://syqi0u1w5sab" path="res://art/menu.png" id="9_tw4p7"]
+[ext_resource type="Texture2D" uid="uid://dsaa1b8nvi35q" path="res://art/map_button.png" id="10_qp3pu"]
+[ext_resource type="Texture2D" uid="uid://bo8dd7r2oi485" path="res://art/gear1.png" id="11_h8c23"]
+[ext_resource type="Texture2D" uid="uid://rm1ekm7bv3k6" path="res://art/ui_drop_shadow.png" id="14_1dq8m"]
+[ext_resource type="PackedScene" uid="uid://7edv7bru3j4d" path="res://scene_objects/settings.tscn" id="16_ann7g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eqf2r"]
+shader = ExtResource("9_ovri5")
+shader_parameter/active = true
+shader_parameter/brightness = 0.7
+
+[sub_resource type="FontVariation" id="FontVariation_ffh20"]
+base_font = ExtResource("3_l5txa")
+spacing_glyph = 4
+spacing_space = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_on8iu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7ofp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbkn4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v38y2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imv0r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lg2bb"]
+
+[node name="BetweenDaysMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nkd48")
+
+[node name="LeatherBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -64.0
+offset_right = 1290.0
+offset_bottom = 816.0
+texture = ExtResource("2_ucw8l")
+
+[node name="PaperBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 103.0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_ljggs")
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 32.0
+offset_right = 404.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_yryh4")
+theme_override_font_sizes/font_size = 40
+text = "John Doe ()"
+
+[node name="Head" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_nxwi5")
+
+[node name="Day" type="Label" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -11.0
+offset_right = 712.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_l5txa")
+theme_override_font_sizes/font_size = 90
+text = "Day 10"
+horizontal_alignment = 2
+
+[node name="Season" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 4.0
+offset_right = 817.0
+offset_bottom = 104.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_jykw2")
+
+[node name="Coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 11.0
+offset_right = 1171.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_l5txa")
+theme_override_font_sizes/font_size = 64
+text = "1,000,000"
+horizontal_alignment = 2
+
+[node name="CoinImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1178.0
+offset_right = 1300.0
+offset_bottom = 122.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_notq6")
+
+[node name="Map" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_eqf2r")
+layout_mode = 0
+offset_top = 103.0
+offset_right = 1280.0
+offset_bottom = 645.0
+texture = ExtResource("2_xgj11")
+
+[node name="ComingSoon" type="Label" parent="Map"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ffh20")
+theme_override_font_sizes/font_size = 106
+text = "Coming soon..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" parent="." instance=ExtResource("8_cw18g")]
+layout_mode = 1
+offset_top = 103.0
+offset_bottom = 103.0
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 643.0
+offset_right = 228.0
+offset_bottom = 771.0
+scale = Vector2(0.605, 0.605)
+texture_normal = ExtResource("9_tw4p7")
+
+[node name="Darken" type="TextureRect" parent="Buttons/MenuButton"]
+modulate = Color(1, 1, 1, 0.556863)
+layout_mode = 0
+offset_top = 3.0
+offset_right = 124.0
+offset_bottom = 127.0
+texture = ExtResource("14_1dq8m")
+
+[node name="MapButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 644.0
+offset_right = 377.0
+offset_bottom = 772.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("10_qp3pu")
+
+[node name="Darken" type="TextureRect" parent="Buttons/MapButton"]
+modulate = Color(1, 1, 1, 0.556863)
+layout_mode = 0
+offset_left = 1.66669
+offset_top = 1.66669
+offset_right = 125.667
+offset_bottom = 125.667
+texture = ExtResource("14_1dq8m")
+
+[node name="SettingsButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 639.0
+offset_right = 594.0
+offset_bottom = 839.0
+scale = Vector2(0.43, 0.43)
+texture_normal = ExtResource("11_h8c23")
+
+[node name="Darken" type="TextureRect" parent="Buttons/SettingsButton"]
+modulate = Color(1, 1, 1, 0.556863)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 188.0
+offset_bottom = 188.0
+texture = ExtResource("14_1dq8m")
+
+[node name="NextDayButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 646.0
+offset_right = 1264.0
+offset_bottom = 709.0
+theme_override_colors/font_hover_pressed_color = Color(0.231373, 0.113725, 0.0117647, 1)
+theme_override_colors/font_hover_color = Color(0.436652, 0.232692, 0.0389897, 1)
+theme_override_colors/font_pressed_color = Color(0.231972, 0.112959, 0.0107773, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.160784, 0.0196078, 1)
+theme_override_colors/font_color = Color(0.31423, 0.159859, 0.0189786, 1)
+theme_override_fonts/font = ExtResource("3_l5txa")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_on8iu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t7ofp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mbkn4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v38y2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_imv0r")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lg2bb")
+text = "Next Day"
+
+[node name="Darken" type="TextureRect" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.556863)
+layout_mode = 0
+offset_top = 645.0
+offset_right = 100.0
+offset_bottom = 720.0
+texture = ExtResource("14_1dq8m")
+
+[node name="Darken2" type="TextureRect" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.556863)
+layout_mode = 0
+offset_left = 175.0
+offset_top = 645.0
+offset_right = 250.0
+offset_bottom = 720.0
+texture = ExtResource("14_1dq8m")
+
+[node name="Darken3" type="TextureRect" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.556863)
+layout_mode = 0
+offset_left = 325.0
+offset_top = 645.0
+offset_right = 400.0
+offset_bottom = 720.0
+texture = ExtResource("14_1dq8m")
+
+[node name="Darken4" type="TextureRect" parent="Buttons"]
+modulate = Color(1, 1, 1, 0.556863)
+layout_mode = 0
+offset_left = 475.0
+offset_top = 645.0
+offset_right = 1067.0
+offset_bottom = 720.0
+texture = ExtResource("14_1dq8m")
+
+[node name="Settings" parent="." instance=ExtResource("16_ann7g")]
+visible = false
+between_days = true
+
+[connection signal="pressed" from="Buttons/MenuButton" to="." method="load_menu" binds= ["menu"]]
+[connection signal="pressed" from="Buttons/MapButton" to="." method="load_menu" binds= ["map"]]
+[connection signal="pressed" from="Buttons/SettingsButton" to="." method="load_menu" binds= ["settings"]]
+[connection signal="pressed" from="Buttons/NextDayButton" to="." method="_on_next_day_button_pressed"]
