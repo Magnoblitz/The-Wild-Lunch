@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwcnvokvfkmwk"]
+
+[ext_resource type="FontFile" uid="uid://bls01hn2x3u4n" path="res://fonts/Carnevalee Freakshow.ttf" id="1_25jij"]
+[ext_resource type="FontFile" uid="uid://dw4a2k6um5ptu" path="res://fonts/Montserrat-Italic-VariableFont_wght.ttf" id="2_drslf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfwg2"]
+bg_color = Color(0.695503, 0.695503, 0.695503, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_gr1q8"]
+base_font = ExtResource("2_drslf")
+variation_embolden = 1.1
+
+[node name="InfoPanel" type="Panel"]
+offset_right = 421.0
+offset_bottom = 339.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfwg2")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 421.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("1_25jij")
+theme_override_font_sizes/font_size = 56
+text = "Title"
+
+[node name="Content" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 80.0
+offset_right = 419.0
+offset_bottom = 339.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_gr1q8")
+theme_override_font_sizes/normal_font_size = 22
+text = "Content here"

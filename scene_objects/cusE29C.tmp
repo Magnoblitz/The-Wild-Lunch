@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv3w778pybdnp"]
+
+[ext_resource type="Texture2D" uid="uid://ncwh1pcehter" path="res://art/man.png" id="1_sbchn"]
+[ext_resource type="Script" path="res://scripts/customer.gd" id="2_ws0x7"]
+[ext_resource type="Texture2D" uid="uid://bwyi4fahmmybj" path="res://art/request_bubble.png" id="3_pf448"]
+[ext_resource type="Texture2D" uid="uid://bhrt4mlnadpsm" path="res://art/bowl_of_beans.png" id="4_k8vuj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oghr"]
+radius = 83.3607
+
+[sub_resource type="Gradient" id="Gradient_ycdt2"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.329268, 0.719512, 1)
+colors = PackedColorArray(0.410327, 5.83585e-07, 1.44392e-07, 1, 0.410327, 5.83585e-07, 1.44392e-07, 1, 0.583333, 1, 0, 1, 0, 0.768935, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ol1km"]
+gradient = SubResource("Gradient_ycdt2")
+
+[node name="Customer" type="Sprite2D"]
+position = Vector2(0, 340)
+texture = ExtResource("1_sbchn")
+script = ExtResource("2_ws0x7")
+customer_type = null
+order = null
+starting_time = null
+id = null
+standing_position = null
+
+[node name="RequestBubble" type="Sprite2D" parent="."]
+position = Vector2(184, -130)
+texture = ExtResource("3_pf448")
+
+[node name="Area2D" type="Area2D" parent="RequestBubble"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RequestBubble/Area2D"]
+position = Vector2(14, 4)
+shape = SubResource("CircleShape2D_1oghr")
+
+[node name="Request1" type="Sprite2D" parent="."]
+position = Vector2(198, -173)
+scale = Vector2(0.414063, 0.414063)
+texture = ExtResource("4_k8vuj")
+
+[node name="Request2" type="Sprite2D" parent="."]
+position = Vector2(198, -126)
+scale = Vector2(0.414063, 0.414063)
+texture = ExtResource("4_k8vuj")
+
+[node name="Request3" type="Sprite2D" parent="."]
+position = Vector2(198, -78)
+scale = Vector2(0.414063, 0.414063)
+texture = ExtResource("4_k8vuj")
+
+[node name="Satisfaction" type="Sprite2D" parent="."]
+position = Vector2(297, -135)
+rotation = -1.5708
+scale = Vector2(0.62, 28)
+texture = SubResource("GradientTexture1D_ol1km")
+
+[connection signal="mouse_entered" from="RequestBubble/Area2D" to="." method="mouse_entered_bubble"]
+[connection signal="mouse_exited" from="RequestBubble/Area2D" to="." method="mouse_exited_bubble"]

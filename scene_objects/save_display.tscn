@@ -1,0 +1,147 @@
+[gd_scene load_steps=12 format=3 uid="uid://brply1johppgr"]
+
+[ext_resource type="Script" path="res://scripts/save_display.gd" id="1_1e88m"]
+[ext_resource type="Texture2D" uid="uid://cxc8kxvtwxnrt" path="res://art/old_paper.png" id="1_u5agw"]
+[ext_resource type="FontFile" uid="uid://bls01hn2x3u4n" path="res://fonts/Carnevalee Freakshow.ttf" id="2_i27to"]
+[ext_resource type="FontFile" uid="uid://bpi354yxdl8xm" path="res://fonts/Montserrat-VariableFont_wght.ttf" id="3_hb0od"]
+[ext_resource type="Texture2D" uid="uid://o4b8g7p8g6ak" path="res://art/customer_icon.png" id="3_kim15"]
+[ext_resource type="FontFile" uid="uid://b54gq8kcujcaj" path="res://fonts/TheWildBunch-Regular.ttf" id="3_q8chy"]
+[ext_resource type="Texture2D" uid="uid://bc2vf0fcqrfl8" path="res://art/male_symbol.png" id="4_0ar5m"]
+[ext_resource type="Texture2D" uid="uid://c7djy5blfby0u" path="res://art/outlined_coin.png" id="5_xhp6a"]
+[ext_resource type="Texture2D" uid="uid://dtt78qy4d8qjm" path="res://art/x.png" id="6_1lm2x"]
+
+[sub_resource type="FontVariation" id="FontVariation_q42s4"]
+base_font = ExtResource("3_hb0od")
+variation_embolden = 1.0
+
+[sub_resource type="FontVariation" id="FontVariation_3edmg"]
+base_font = ExtResource("3_hb0od")
+variation_embolden = 1.0
+
+[node name="Save" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1e88m")
+
+[node name="Paper" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_right = 839.0
+offset_bottom = 457.0
+rotation = 1.57079
+scale = Vector2(0.465, 0.465)
+texture = ExtResource("1_u5agw")
+
+[node name="SaveText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = -1.0
+offset_right = 279.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i27to")
+theme_override_font_sizes/font_size = 50
+text = "Save 1"
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 0
+offset_top = 66.0
+offset_right = 213.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_q8chy")
+theme_override_font_sizes/font_size = 20
+text = "\"Nameyee1111!@()"
+horizontal_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 1
+
+[node name="GenderImage" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 5.00003
+offset_top = 2.0
+offset_right = 133.0
+offset_bottom = 130.0
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("4_0ar5m")
+
+[node name="DayText" type="Label" parent="."]
+layout_mode = 0
+offset_top = 126.0
+offset_right = 213.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i27to")
+theme_override_font_sizes/font_size = 32
+text = "Day 1"
+horizontal_alignment = 1
+
+[node name="CustomerImage" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 166.0
+offset_right = 127.0
+offset_bottom = 294.0
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("3_kim15")
+
+[node name="CustomersServed" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 182.0
+offset_right = 212.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_q42s4")
+theme_override_font_sizes/font_size = 15
+text = "100 Customers Served"
+horizontal_alignment = 2
+autowrap_mode = 3
+text_overrun_behavior = 1
+
+[node name="CoinImage" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 229.0
+offset_right = 141.0
+offset_bottom = 370.0
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("5_xhp6a")
+
+[node name="CoinText" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 240.0
+offset_right = 209.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_3edmg")
+theme_override_font_sizes/font_size = 20
+text = "100 Coins"
+horizontal_alignment = 2
+autowrap_mode = 3
+text_overrun_behavior = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 213.0
+offset_bottom = 291.0
+
+[node name="XButton" type="TextureButton" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 195.0
+offset_top = -17.0
+offset_right = 323.0
+offset_bottom = 111.0
+scale = Vector2(0.265, 0.265)
+texture_normal = ExtResource("6_1lm2x")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="XButton" to="." method="_on_x_button_pressed"]
