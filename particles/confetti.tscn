@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqnsafm8ee0qv"]
+
+[sub_resource type="Gradient" id="Gradient_78uxv"]
+offsets = PackedFloat32Array(0.33, 0.331, 0.669, 0.67)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vy257"]
+gradient = SubResource("Gradient_78uxv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_81gjm"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 27.15
+angle_min = 1.07288e-05
+angle_max = 360.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_vy257")
+
+[node name="Confetti" type="GPUParticles2D"]
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_81gjm")

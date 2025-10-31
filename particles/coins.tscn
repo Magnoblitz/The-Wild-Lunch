@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsmxdhmg3fa42"]
+
+[ext_resource type="Texture2D" uid="uid://c0f3ia5sc3usd" path="res://art/coin.png" id="1_151ap"]
+
+[sub_resource type="Gradient" id="Gradient_yid7d"]
+offsets = PackedFloat32Array(0, 0.273026, 0.730263, 1)
+colors = PackedColorArray(0.977725, 0.86769, 0.840305, 1, 1, 1, 1, 1, 0.85476, 1, 0.89401, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vr4nr"]
+gradient = SubResource("Gradient_yid7d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ladln"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 15.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.15
+scale_max = 0.2
+color_initial_ramp = SubResource("GradientTexture1D_vr4nr")
+
+[node name="Coins" type="GPUParticles2D"]
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_ladln")
+texture = ExtResource("1_151ap")
+lifetime = 3.0
+one_shot = true
+speed_scale = 5.0
+explosiveness = 0.8

@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7jo31fu0oug8"]
+
+[ext_resource type="Texture2D" uid="uid://coug0xj6lvb2n" path="res://art/smoke_particle.png" id="1_wnffc"]
+
+[sub_resource type="Curve" id="Curve_nawgo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.566265, 0.668052), 0.0, 0.0, 0, 0, Vector2(1, 0.150831), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_51pgx"]
+curve = SubResource("Curve_nawgo")
+
+[sub_resource type="Gradient" id="Gradient_wj18v"]
+offsets = PackedFloat32Array(0, 0.628289, 1)
+colors = PackedColorArray(1, 0.117647, 0, 1, 0.690853, 0.459631, 0, 1, 1, 1, 0.317647, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gg1hd"]
+gradient = SubResource("Gradient_wj18v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sg80q"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 60.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.15
+scale_max = 0.25
+color_initial_ramp = SubResource("GradientTexture1D_gg1hd")
+alpha_curve = SubResource("CurveTexture_51pgx")
+
+[node name="Sparks" type="GPUParticles2D"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_sg80q")
+texture = ExtResource("1_wnffc")
